@@ -135,6 +135,9 @@ function magic() {
 	}
 
 	else if (simsubscreennum == 2) {
+		document.getElementById('cap1').style.visibility = "hidden";
+		document.getElementById('cap2').style.visibility = "hidden";
+
 		document.getElementById('a2').style.visibility = "hidden";
 		document.getElementById('tx').style.visibility = "hidden";
 		document.getElementById('ch').style.visibility = "hidden";
@@ -470,8 +473,11 @@ function step1() {
 							document.getElementById("can1").style = "position:absolute; left: 28px; top:100px;";
 							document.getElementById('can11').innerHTML = "Internal diameter of the core cutter is =13cm.";
 							document.getElementById("can11").style = "position:absolute; left: 28px; top:60px;";
-							document.getElementById("cap1").style = "position:absolute; left: 28px; top:170px;";
-							document.getElementById("cap2").style = "position:absolute; left: 28px; top:220px;";
+							// document.getElementById("cap1").style = "position:absolute; left: 28px; top:170px;";
+							// document.getElementById("cap2").style = "position:absolute; left: 28px; top:220px;";
+							document.getElementById('cap1').style.visibility = "visible";
+							document.getElementById('cap2').style.visibility = "visible";
+
 							document.getElementById('can3').style.visibility = "visible";
 							document.getElementById('tx').style.visibility = "visible";
 							document.getElementById('q').style.visibility = "visible";
@@ -790,13 +796,17 @@ function step08() {
 	setTimeout(function () {
 		document.getElementById('can02').innerHTML = "Weight of the container with field soil is (w<sub>2</sub>)= "+dataset[h2][2]+" g";
 		document.getElementById('p4-1').innerHTML = dataset[h2][2];
+		if(repeat==1)
+		{
+		document.getElementById('nextButton').style.visibility = "visible";
+		}
 		if(repeat==2)
 		{
 		validateAnswer_(1, 1, "80px", "250px");
 		}		
 		if(repeat==3)
 		{
-		validateAnswer_(3, 0, "120px", "150px");
+		validateAnswer_(3, 0, "120px", "120px");
 		}
 		h2++;
 	}, 3000);
@@ -1087,9 +1097,9 @@ function refresh() {
 	document.getElementById("3-0").style.backgroundColor = "";
 	document.getElementById("4-0").style.backgroundColor = "";
 	document.getElementById("5-0").style.backgroundColor = "";
-	document.getElementById('can01').innerHTML = "Weight of the empty container is (w<sub>1</sub>)	=";
-	document.getElementById('can02').innerHTML = "Weight of the container with field soil is w<sub>2</sub>=";
-	document.getElementById('can14').innerHTML = "Weight of the container with the dry soil (w<sub>3</sub>)=";
+	document.getElementById('can01').innerHTML = "Weight of the empty container is (w<sub>1</sub>) =";
+	document.getElementById('can02').innerHTML = "Weight of the container with field soil is (w<sub>2</sub>) =";
+	document.getElementById('can14').innerHTML = "Weight of the container with the dry soil (w<sub>3</sub>) =";
 	document.getElementById("acu").style.animation = "";
 	// document.getElementById("incDoor13-"+repeat).style.animation="";
 	// document.getElementById("incDoor13-"+repeat).style.animation="";
