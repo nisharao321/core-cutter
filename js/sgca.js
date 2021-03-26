@@ -162,6 +162,7 @@ function magic() {
 	}
 	else if (simsubscreennum == 3) {
 		document.getElementById('canvas2').style.visibility = "hidden";
+		myStopFunction();
 		myInt = setInterval(function () { animatearrow(); }, 500);
 		document.getElementById('arrow1').style = "visibility:visible ;position:absolute; left: 510px; top: 200px; height: 40px; z-index: 10;";
 		animateArrowATPosition(510, 200, 40, 270);
@@ -172,6 +173,7 @@ function magic() {
 		document.getElementById('t').style.visibility = "hidden";
 		document.getElementById('a10').style.visibility = "hidden";
 		document.getElementById('aw').style.visibility = "hidden";
+		myStopFunction();
 		myInt = setInterval(function () { animatearrow(); }, 500);
 		animateArrowATPosition(300, 80, 35, 270);
 		document.getElementById('a23').onclick = function () { step4(); };
@@ -179,6 +181,7 @@ function magic() {
 	}
 	else if (simsubscreennum == 5) {
 		document.getElementById('a10').style.visibility = "hidden";
+		myStopFunction();
 		myInt = setInterval(function () { animatearrow(); }, 500);
 		animateArrowATPosition(240, 130, 40, 270);
 		document.getElementById('ah').onclick = function () { step5(); };
@@ -186,6 +189,7 @@ function magic() {
 	else if (simsubscreennum == 6) {
 		document.getElementById('a191').style.visibility = "hidden";
 		document.getElementById('a201').style.visibility = "hidden";
+		myStopFunction();
 		myInt = setInterval(function () { animatearrow(); }, 500);
 		animateArrowATPosition(300, 170, 40, 270);
 		document.getElementById('ah1').onclick = function () { step6(); };
@@ -193,6 +197,7 @@ function magic() {
 	else if (simsubscreennum == 7) {
 		document.getElementById('can21').style.visibility = "visible";
 		document.getElementById('v21').style.visibility = "visible";
+		myStopFunction();
 		myInt = setInterval(function () { animatearrow(); }, 500);
 		animateArrowATPosition(645, 445, 30, 90);
 		document.getElementById('2-4').onclick = function () {
@@ -201,6 +206,7 @@ function magic() {
 			document.getElementById("2-4").style.visibility = "hidden";
 			document.getElementById("p2-1").innerHTML = "0.000";
 			document.getElementById("2-0").style.backgroundColor = "lightgrey";
+			myStopFunction();
 			myInt = setInterval(function () { animatearrow(); }, 500);
 			animateArrowATPosition(280, 230, 40, 270);
 			document.getElementById('a62').onclick = function () { step7(); };
@@ -236,6 +242,8 @@ function magic() {
 		repeat += 1;
 		var k = 0;
 		refresh();
+		document.getElementById('13-2').style.visibility = "hidden";
+		document.getElementById('13-4').style.visibility = "hidden";
 		document.getElementById('trial').style = "visibility:visible ;left: 700px; top: 80px;position: absolute;font-weight: bold;text-transform: uppercase;";
 		document.getElementById('trial').innerHTML = "Trial : " + repeat;
 
@@ -247,7 +255,7 @@ function magic() {
 		document.getElementById('can01').style.visibility = "visible";
 		document.getElementById('3-0').style.visibility = "visible";
 		document.getElementById('3-4').style.visibility = "visible";
-
+		myStopFunction();
 		myInt = setInterval(function () { animatearrow(); }, 500);
 		animateArrowATPosition(645, 445, 30, 90);
 		document.getElementById('3-4').onclick = function () {
@@ -256,6 +264,7 @@ function magic() {
 			document.getElementById("3-4").style.visibility = "hidden";
 			document.getElementById("p3-1").innerHTML = "0.000";
 			document.getElementById("3-0").style.backgroundColor = "lightgrey";
+			myStopFunction();
 			myInt = setInterval(function () { animatearrow(); }, 500);
 			animateArrowATPosition(260, 370, 40, 270);
 			document.getElementById('b01').onclick = function () { step72(); };
@@ -272,6 +281,7 @@ function magic() {
 		document.getElementById('v22').style.visibility = "hidden";
 		document.getElementById('can01').style.visibility = "hidden";
 		document.getElementById('b01').style.visibility = "hidden";
+		myStopFunction();
 
 		myInt = setInterval(function () { animatearrow(); }, 500);
 		animateArrowATPosition(560, 230, 40, 270);
@@ -295,6 +305,7 @@ function magic() {
 		document.getElementById('13-11').style.visibility = "visible";
 
 		document.getElementById('acu').style.visibility = "visible";
+		myStopFunction();
 
 		myInt = setInterval(function () { animatearrow(); }, 500);
 		animateArrowATPosition(155, 260, 40, 360);
@@ -314,6 +325,7 @@ function magic() {
 		document.getElementById('13-11').style.visibility = "hidden";
 		document.getElementById('5-4').style.visibility = "visible";
 		document.getElementById('auu').style.visibility = "hidden";
+		myStopFunction();
 
 		myInt = setInterval(function () { animatearrow(); }, 500);
 		animateArrowATPosition(645, 445, 30, 90);
@@ -323,6 +335,8 @@ function magic() {
 			document.getElementById("5-4").style.visibility = "hidden";
 			document.getElementById("p5-1").innerHTML = "0.000";
 			document.getElementById("5-0").style.backgroundColor = "lightgrey";
+							myStopFunction();
+
 			myInt = setInterval(function () { animatearrow(); }, 500);
 			animateArrowATPosition(260, 340, 40, 270);
 			document.getElementById('b').onclick = function () { step10(); };
@@ -913,7 +927,12 @@ function validateAnswer1(id, ans, mark, chk, res, sheet) {
 		id.disabled = true;
 		id.style.backgroundColor = "white";
 		mark.style.visibility = "hidden";
+		setTimeout(function () {
+		document.getElementById("13-2").style.visibility = "visible";
+		document.getElementById("13-4").style.visibility = "visible";
+
 		document.getElementById("nextButton").style.visibility = "visible";
+	}, 250);
 
 	}
 }
