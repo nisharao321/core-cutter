@@ -397,12 +397,12 @@ function step1() {
 			document.getElementById("1-3").style.animation = "movev 1s forwards";
 			document.getElementById("1-2").style.animation = "movev 1s forwards";
 			setTimeout(function () {
-
+				myStopFunction();
 				myInt = setInterval(function () { animatearrow(); }, 500);
-				animateArrowATPosition(430, 270, 30, 270);
+				animateArrowATPosition(430, 240, 30, 270);
 				document.getElementById('1-3').onclick = function () {
 					myStopFunction();
-					document.getElementById("1-3").style = "position:absolute; width:15%; cursor:pointer; top:245px;";
+					document.getElementById("1-3").style = "position:absolute; width:15%; cursor:pointer; top:203px;";
 					document.getElementById("1-3").style.animation = "movev1 1s forwards";
 					setTimeout(function () {
 						document.getElementById('can11').innerHTML = "Internal diameter of the core cutter is = 13cm.";
