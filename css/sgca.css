@@ -370,19 +370,19 @@ input[type=number] {
 
 @-webkit-keyframes movev{
   from {  top: 100px;}
-  to { top: 245px;}
+  to { top: 203px;}
 }
 @keyframes movev {
   from {  top: 100px;}
-  to { top: 245px;}
+  to { top: 203px;}
 }
 @-webkit-keyframes movev1{
   from {  left: 350px;}
-  to { left: 320px;}
+  to { left: 318px;}
 }
 @keyframes movev1 {
   from {  left: 350px;}
-  to { left: 320px;}
+  to { left: 318px;}
 }
 /* @-webkit-keyframes movehammercoreac { */
   /* from { top: 310px;} */
