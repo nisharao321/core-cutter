@@ -1,692 +1,755 @@
-<!DOCTYPE html>
-<html lang="en-US">
+  <!DOCTYPE html>
+  <html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <title>SOLVE</title>
+    <link rel="stylesheet" href="css/exp9.css" />
+    <script type="text/javascript" src= "js/jquerymin.js"></script>
+    <script type="text/javascript" src= "js/ej.web.all.min.js"></script>
+    <script type="text/javascript" src= "js/exp9.js"></script>
+    <script>
+      var simsubscreennum=0;
+      var temp=0;
+      var lnt=0;
+      var n;
+    </script>
+    <style>
+    
+    </style>
 
-<head>
-  <meta charset="UTF-8">
-
-  <title>SOLVE</title>
-  <script type="text/javascript" src="js/jquerymin.js"></script>
-
-  <link rel="stylesheet" href="css/sgca.css" />
-  <script type="text/javascript" src="js/sgca.js"></script>
-  <link rel="stylesheet" href="css/mathstyle.css" />
-
-  <script>
-    var simsubscreennum = 0;
-
-  </script>
-</head>
-
-<body style="margin:0; font-family:verdana; font-size:14px;">
-  <!--Simulation Screen start		-->
-  <div id="simscreen">
-
-    <!--Title of Simulation		-->
-    <div id="title">
-      <h3>Dry density of soil by core cutter</h3>
-    </div>
-
-    <!--SubScreen Home	-->
-    <div class="simsubscreen" id="canvas0">
-      <h4 class="incanvas" style="font-family:verdana;">Objective</h4>
-      <p class="incanvas" style="font-family:verdana; font-size:15px;">To determine the field or in-situ density of soil by the core cutter method.
-      </p></br>
-      <h4 class="incanvas" style="font-family:verdana; ">Apparatus used:</h4>
-      <p class="incanvas" style="font-family:verdana; font-size:14px;">Core cutter, Rammer, Weighing scale, Container etc.</p>
-      <span class="tooltip"
-        style="border-bottom:1px dotted ; color:red; position:absolute; left:5px;top:120px;"><strong>Description</strong>
-        <span class="tooltiptext" style="text-align:justify;left:90px;top:2px;"><strong
-            style="color:red;">Field Density:</strong> The field density of soil can be defined as ratio of the
-          weight of the soil to its corresponding
-          volume. and it is expressed in g/cm<sup>3</sup>. Field density is also called in-situ density. and it is needed
-          for the determination of
-          the safe bearing capacity of the soil for the purpose of stability analysis of slopes, settlement calculation
-          and also to determine the pressure on the underlying strata. </span></span>
-      <img id="" style="position: absolute; left: 200px; top: 280px;" title="table"
-        src="Images/table.png">
-
-      <img id="" style="position: absolute; left: 260px; top: 260px; width:95px;height:150px;" title="Dolly"
-        src="Images/cap.svg" />
-
-      <img id="" style="position: absolute; left: 385px; top: 253px; height:120px;" title="Core cutter"
-        src="Images/11.png" />
-
-      <img id="" style="position: absolute; left: 510px; top: 275px; width:150px;" title="Weighing scale"
-        src="Images/wm2.png" />
-      <img style="position:absolute; left:20px; top:160px;" title="" src="Images/human.png" />
-    </div>
-
-    <!--Step1-->
-    <div class="simsubscreen" id="canvas1" style="visibility:hidden">
-      <strong id="titlestep" class="incanvas">STEP </strong>
-      <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
-      <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Measure the height and the diameter
-        of the core cutter to calculae the volume of the core cutter.</p>
-      <img id="a21" style="position: absolute; left: 120px; top: 170px; width:30px; " title="Scale"
-        src="Images/scale.svg" />
-      <img id="a11" style="position: absolute; left: 250px; top: 300px;" title="core cutter" src="Images/11.png" />
-      <img id="a2" style="position: absolute; left: 228px; top: 90px; width:400px; visibility:hidden" title="Scale"
-        src="Images/4.png" />
-      <p id="can1" style="position:absolute;top: 440px; left:28px; font-family:verdana; font-size:14px;">Internal Height of the
-        core cutter is = _____ cm.</p>
-      <p id="can11" style="position:absolute;top: 470px; left:28px; font-family:verdana; font-size:14px;">Internal Diameter of
-        the core cutter is = _____ cm.</p>
-      <p id="cann"
-        style="position:absolute;top: 470px; left:28px; font-family:verdana; font-size:14px;visibility:hidden;">Volume
-        of the core cutter = _____ cm<sup>3</sup>.</p>
-        <div id="cap1" style="position: absolute;top:180px;left:27px;visibility: hidden;">
-        =&nbsp;<span  class="frac"><sup>&pi;(D<sup>2</sup>)</sup><span>&frasl;</span><sub>4</sub></span>*<span>H</span>
-      </div>
-      <div id="cap2"style="position: absolute;top:240px;left:27px;visibility:hidden;">
-        =&nbsp;<span  class="frac"><sup>&pi;(130<sup>2</sup>)</sup><span>&frasl;</span><sub>4</sub></span>*<span>100</span>
-      </div>
-      <!-- <img id="cap1" style="position: absolute; left: 33px; top: 350px; width:400px; visibility:hidden" title=""
-        src="Images/cap1.PNG" />
-      <img id="cap2" style="position: absolute; left: 10px; top: 350px; width:400px; visibility:hidden" title=""
-        src="Images/cap12.PNG" /> -->
-      <p id="can3"
-        style="position:absolute;top: 300px; left:28px; font-family:verdana; font-size:14px;visibility:hidden;">Volume
-        of the core cutter =</p>
-
-      <input id="tx" type="text" onfocus="this.value=''"
-        style=" border:none; border-bottom-style:double;position:absolute;left:235px;top:315px;visibility:hidden;width:60px;"
-        autocomplete="off" required>
-      <p id="q" style="position:absolute;left:310px;top:305px;visibility:hidden;">cc</p>
-      <input id="ch" type="button"
-        style="border-bottom:1px solid black;position:absolute;left:235px;top:380px;visibility:hidden;" value="check">
-      <input id="re" type="button"
-        style="border-bottom: 1px solid black; position: absolute; left: 290px; top: 380px; visibility: hidden;"
-        value="Result">
-      <p id="r1" style="position:absolute; left:335px; top:290px; color:#32CD32; visibility:hidden;  font-size:22px;">✔
-      </p>
-      <p id="w1" style="position:absolute; left: 335px; top: 290px; color: red; visibility: hidden; font-size: 22px;">✘
-      </p>
-      <img id="1-2" src="Images/vc1.png"
-        style="position:absolute; left:231.5px; top:100px; width:55%;visibility: hidden;">
-      <img id="1-3" src="Images/vc2.png"
-        style="position:absolute; left:350px; top:100px; width:15%; cursor:pointer;visibility: hidden;">
-    </div>
-    <!--Step2	-->
-    <div class="simsubscreen" id="canvas2" style="visibility: hidden">
-      <strong id="titlestep2" class="incanvas">STEP </strong>
-      <span class="circlebg" id="stepnumber2">&nbsp;2&nbsp;</span>
-      <p id="pumptext2" class="steptext" style="font-family:verdana; font-size:14px;">Weigh the weight of the core
-        cutter by
-        using weighing balance.</p>
-
-      <img id="1-0" style="position: absolute; left: 430px; top: 255px;" title="Weighing scale" src="Images/wm1.png" />
-      <img id="1-1" style="position:absolute; left:490px; top:375px;" src="Images/on.png">
-      <p id="p1-1" style="position:absolute; left:540px; top:332px;"></p>
-      <img id="1-4" style="position:absolute; left:593px; top:375px;" src="Images/tare.png">
-      <img id="a12" style="position: absolute; left: 200px; top: 305px;" title="core cutter" src="Images/11.png" />
-      <p id="can12" style="position:absolute;top: 450px; left:28px; font-family:verdana; font-size:14px;">Weight of the
-        core cutter (W<sub>1</sub>) = _____ g.</p>
-      <p id="v12" style="position:absolute;left: 550px; top:332px;font-family:verdana; font-size:14px;"></p>
-    </div>
-
-    <!--Step3	-->
-    <div class="simsubscreen" id="canvas3" style="visibility: hidden">
-      <strong id="titlestep3" class="incanvas">STEP </strong>
-      <span class="circlebg" id="stepnumber3">&nbsp;3&nbsp;</span>
-      <p id="pumptext3" class="steptext" style="font-family:verdana; font-size:14px;">clean and level the soil to be
-        tested.</p>
-      <img id="a31" style="position: absolute; left: 225px; top: 172px; width: 89px; height: 132px; visibility: hidden"
-        title=" Dolly" src="Images/mould.png">
-      <img id="a19" style="position: absolute; left: 220px; top: 165px;width:370px;" title="soil"
-        src="Images/box.jpg" />
-      <img id="a20" style="position: absolute; left: 330px; top: 250px;width:140px;visibility:hidden;" title="soil"
-        src="Images/box1.jpg" />
-      <img id="aw" style="position: absolute; left: 330px; top: 250px;width:140px;visibility:hidden;" title="soil"
-        src="Images/box3.png" />
-
-      <img id="t21" style="position: absolute; left: 410px; top: 200px;width:120px;transform:rotate(310deg)"
-        title="Trowel" src="Images/trowel3.png" />
-      <img id="a10" style="position: absolute; left: 55px; top: 340px; width:450px; height:150px;visibility:hidden;"
-        title="Grass" src="Images/GR.png" />
-      <img id="t" style="position: absolute; left: 30px; top: 400px; width:500px; height:150px;visibility:hidden;"
-        title="soil surface" src="Images/M.png" />
-    </div>
-
-    <!--Step4	-->
-    <div class="simsubscreen" id="canvas4" style="visibility: hidden">
-      <strong id="titlestep4" class="incanvas">STEP </strong>
-      <span class="circlebg" id="stepnumber4">&nbsp;4&nbsp;</span>
-      <p id="pumptext4" class="steptext" style="font-family:verdana; font-size:14px;">Fix the Rammer on the core cutter.
-      </p>
-
-      <img id="" style="position: absolute; left: 240px; top: 330px;width:70px;" title="core cutter"
-        src="Images/11.png" />
-
-      <img id="" style="position: absolute; left: 243px;width:64px; top: 312px;height:70px; " title=" Dolly"
-        src="Images/cap.svg">
-
-      <img id="a10" style="position: absolute; left: 55px; top: 340px; width:450px; height:150px;" title="Grass"
-        src="Images/GR.png" />
-
-      <img id="" style="position: absolute; left: 30px; top: 400px; width:500px; height:150px;" title="soil surface"
-        src="Images/M.png" />
-
-      <img id="a23" style="position: absolute; left: 238px; top: 80px;width:70px;" title="Rammer" src="Images/6.png" />
-    </div>
-
-    <!--Step5	-->
-    <div class="simsubscreen" id="canvas5" style="visibility: hidden">
-      <strong id="titlestep5" class="incanvas">STEP </strong>
-      <span class="circlebg" id="stepnumber5">&nbsp;5&nbsp;</span>
-      <p id="pumptext5" class="steptext" style="font-family:verdana; font-size:14px;">start pressing the core cutter in
-        the
-        soil using Rammer.</p>
-      <img id="ac" style="position: absolute; left: 169.5px; top: 310px;width:78px; " title="core"
-        src="Images/mould.png">
-      <!-- <img id="aco" style="position: absolute; left: 178px; top: 296px;height:70px; width:64px;" title="Dolly" src="Images/"> -->
-      <img id="a16" style="position: absolute; left: 30px; top: 320px; width:370px; height:130px;" title="Grass"
-        src="Images/GR.png" />
-      <img id="n" style="position: absolute; left: 10px; top: 380px; width:400px; height:150px;" title="soil surface"
-        src="Images/M.png" />
-      <img id="ah" style="position: absolute; left: 173px; top: 148px;width:70px;" title="Rammer" src="Images/6.png" />
-    </div>
-
-    <!--Step6	-->
-    <div class="simsubscreen" id="canvas6" style="visibility: hidden">
-      <strong id="titlestep6" class="incanvas">STEP </strong>
-      <span class="circlebg" id="stepnumber6">&nbsp;6&nbsp;</span>
-      <p id="pumptext6" class="steptext" style="font-family:verdana; font-size:14px;">Remove the Rammer and the
-         soil sample on the sides of the core cutter.</p>
-      <img id="a10" style="position: absolute; left: 55px; top: 340px; width:450px; height:150px;" title="Grass"
-        src="Images/GR.png" />
-      <img id="aco1" style="position: absolute; left: 236px; top: 363px; width:78px;" title=" Dolly"
-        src="Images/mould.png">
-      <img id="ah1" style="position: absolute; left: 240px; top:205px;width:70px;" title="Rammer" src="Images/6.png" />
-      <img id="" style="position: absolute; left: 30px; top: 400px; width:500px; height:150px;" title="soil surface"
-        src="Images/M.png" />
-      <img id="a191" style="position: absolute; left: 420px; top: 165px;width:320px;visibility:hidden;" title="Grass"
-        src="Images/box.jpg" />
-      <img id="a201" style="position: absolute; left: 530px; top: 250px;width:100px;visibility:hidden;" title="soil"
-        src="Images/box2.jpg" />
-    </div>
-
-    <!--Step7	-->
-    <div class="simsubscreen" id="canvas7" style="visibility: hidden">
-      <strong id="titlestep7" class="incanvas">STEP </strong>
-      <span class="circlebg" id="stepnumber7">&nbsp;7&nbsp;</span>
-      <p id="pumptext7" class="steptext" style="font-family:verdana; font-size:14px;">Calculate the weight of the soil in the core cutter.</p>
-      <img id="2-0" style="position: absolute; left: 430px; top: 255px;" title="Weighing scale" src="Images/wm1.png" />
-
-      <img id="a26" style="position: absolute; left: 205px; top: 285px;" title="core cutter with soil" src="Images/G.png" />
-      <img id="a62" style="position: absolute; left: 210px; top: 248px;height:120px;width:88px;" title=" coller"
-        src="Images/cap.svg">
-      <!-- <p id="can21" style="position:absolute;top: 450px; left:28px; font-family:verdana; font-size:14px;">Weight of the
-        soil with the core cutter is(W<sub>2</sub>)= _____ g</p> -->
-      <p id="v21" style="position:absolute;left: 540px; top:332px;font-family:verdana; font-size:14px;"></p>
-      <!-- <p id="v22" style="position:absolute;left: 550px; top:332px;font-family:verdana; font-size:14px;"></p> -->
-
-      <!-- <img id="b01" style="position: absolute; left: 200px; top: 355px;visibility:hidden;" title="bowl"
-        src="Images/bowl1.png" /> -->
-      <p id="can01"
-        style="position:absolute;top: 450px; left:28px; font-family:verdana; font-size:14px;visibility:hidden;">Weight
-        of the empty container is (w<sub>1</sub>) = _____ g.</p>
-      <p id="v01"
-        style="position:absolute;left: 500px; top:315px;font-family:verdana; font-size:14px;visibility:hidden;"></p>
-      <img id="2-1" style="position:absolute; left:490px; top:375px;" src="Images/on.png">
-      <p id="p2-1" style="position:absolute; left:540px; top:332px;"></p>
-      <img id="2-4" style="position:absolute; left:593px; top:375px;" src="Images/tare.png">
-    </div>
-
-
-    <div class="simsubscreen" id="canvas8" style="visibility: hidden">
-      <h3 style="position:absolute; left:-45px; top:-10px;">&nbsp;Observations:</h3>
-      <table style="position:absolute; left:-35px; top:40px; border:1px solid black; font-size:14px;  text-align:left;">
-        <tr>
-          <td style="border:1px solid black; padding:5px;">Trial No.</td>
-          <td id="t1" style="border:1px solid black; padding:10px;">1</td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:5px;">Weight of core cutter W<sub>1</sub></td>
-          <td id="t2" style="border:1px solid black; padding:10px;"></td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:5px;">Weight of core cutter + soil, W<sub>2</sub></td>
-          <td id="t3" style="border:1px solid black; padding:10px;"></td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:5px;">Weight of soil, M (W<sub>2</sub>-W<sub>1</sub>)</td>
-          <td id="t4" style="border:1px solid black; padding:10px;"></td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:5px;">Volume of soil V</td>
-          <td id="t5" style="border:1px solid black; padding:10px;"></td>
-        </tr>
-        <!-- <tr>
-<td style="border:1px solid black; padding:5px;">Weight of container + dry soil, W<sub>4</sub></td>
-<td id="t6" style="border:1px solid black; padding:10px;"></td>
-</tr>     -->
-      </table>
-
-      <!-- <h3 style="position:absolute; left:-45px; top:300px;">&nbsp;Variables used in calculation:</h3>
-      <table
-        style="position:absolute; left:-35px; top:350px; border:1px solid black; font-size:14px;  text-align:left;">
-        <tr>
-          <td style="border:1px solid black; padding:5px;">Empty weight of mould, W<sub>c</sub></td>
-          <td style="border:1px solid black; padding:10px;">2181 g</td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:5px;">Weight of compacted soil, W<sub>w</sub> (g)</td>
-          <td style="border:1px solid black; padding:10px;">W<sub>1</sub> - W<sub>c</sub></td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:5px;">Volume of mould, V<sub>c</sub></td>
-          <td style="border:1px solid black; padding:10px;">1021.01 cc</td>
-        </tr> -->
-      </table>
-
-      <h3 style="position:absolute; left:0px; top:250px;">&nbsp;Calculations:</h3>
-      <table style="position:absolute; left:0px; top:290px;  font-size:14px;  text-align:left;">
-        <tr>
-          <td style="padding:5px;">Field density, <sup>&rho;</sup><sub>F</sub> =</td>
-          <td id="" style="padding:10px;">
-            <span class="frac"><sup>W</sup><span>&frasl;</span><sub>V</sub></span> =
-            <input id="wd" type="text" style=" border:none; border-bottom-style:double; width:55px;" required> g/cc
-            <span id="mark1" style="font-size:22px; visibility:hidden;"></span>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:5px;"></td>
-          <td id="" style="padding:15px;">
-            <input id="chk1" class="clsBtn" type="button" name="check" value="Check" />
-            <input id="res1" class="clsBtn" type="button" name="Formula" value="Result" disabled />
-          </td>
-        </tr>
-
-      </table>
-    </div>
-
-
-
-    <div class="simsubscreen" id="canvas9" style="visibility: hidden">
-      <strong id="titlestep7" class="incanvas">STEP </strong>
-      <span class="circlebg" id="stepnumber7">&nbsp;8&nbsp;</span>
-      <p id="pumptext7" class="steptext" style="font-family:verdana; font-size:14px;">Calculate the weight of the empty container.</p>
-      <img id="3-0" style="position: absolute; left: 430px; top: 255px;visibility: hidden;" title="Weighing scale"
-        src="Images/wm1.png" />
-
-      <p id="can21" style="position:absolute;top: 450px; left:28px; font-family:verdana; font-size:14px;">Weight of the
-        soil in the core cutter is (W<sub>2</sub>) = _____ g</p>
-      <p id="v22" style="position:absolute;left: 550px; top:332px;font-family:verdana; font-size:14px;"></p>
-
-      <img id="b01" style="position: absolute; left: 200px; top: 355px;visibility:hidden;" title="container"
-        src="Images/bowl1.png" />
-      <p id="can01"
-        style="position:absolute;top: 450px; left:28px; font-family:verdana; font-size:14px;visibility:hidden;">Weight
-        of the empty container is (w<sub>1</sub>) = _____ g</p>
-      <p id="v01"
-        style="position:absolute;left: 500px; top:315px;font-family:verdana; font-size:14px;visibility:hidden;"></p>
-      <!-- <img id="3-1" style="position:absolute; left:490px; top:375px;" src="images/on.png"> -->
-      <p id="p3-1" style="position:absolute; left:540px; top:332px;"></p>
-      <img id="3-4" style="position:absolute; left:593px; top:375px;visibility: hidden;" src="Images/tare.png">
-    </div>
-
-    <!-- step8 -->
-    <div class="simsubscreen" id="canvas10" style="visibility: hidden">
-      <strong id="titlestep81" class="incanvas">STEP </strong>
-      <span class="circlebg" id="stepnumber81">&nbsp;9&nbsp;</span>
-      <p id="pumptext81" class="steptext" style="font-family:verdana; font-size:14px;">Calculate the weight of the
-        field soil in the container.</p>
-
-      <img id="p1" style="position: absolute; left: 155px; top: 320px;width:180px;visibility:hidden;"
-        title="Weighing scale" src="Images/plate.png" />
-      <img id="p2" style="position: absolute; left: 155px; top: 320px;width:180px;visibility:hidden;" title="plate"
-        src="Images/plate1.png" />
-      <img id="p3" style="position: absolute; left: 155px; top: 320px;width:180px;visibility:hidden;" title="plate"
-        src="Images/plate2.png" />
-
-      <img id="b1" style="position: absolute; left: 60px; top: 320px;visibility:hidden;" title="container"
-        src="Images/bowl1.png" />
-      <img id="b2" style="position: absolute; left: 60px; top: 320px;visibility:hidden;" title=" container with soil"
-        src="Images/bowl2.png" />
-      <img id="tr1" style="position: absolute; left: 350px; top: 320px;width:120px;visibility:hidden;" title="Trowel"
-        src="Images/trowel1.png" />
-      <img id="tr2" style="position: absolute; left: 350px; top: 320px;width:120px;visibility:hidden;" title="Trowel"
-        src="Images/trowel12.png" />
-      <img id="s1" style="position: absolute; left: 480px; top: 255px;visibility: hidden;" title="core with soil"
-        src="Images/G.png" />
-      <img id="4-0" style="position: absolute; left: 430px; top: 255px;visibility:hidden;" title="Weighing scale"
-        src="Images/wm1.png" />
-      <!-- <img id="4-1" style="position:absolute; left:490px; top:375px;visibility: hidden;" src="images/on.png"> -->
-      <p id="p4-1" style="position:absolute; left:540px; top:332px;"></p>
-      <img id="4-4" style="position:absolute; left:593px; top:375px;visibility: hidden;" src="Images/tare.png">
-      <p id="v23" style="position:absolute;left: 550px; top:332px;font-family:verdana; font-size:14px;"></p>
-      <img id="b02" style="position: absolute; left: 200px; top: 350px;visibility:hidden;" title="container"
-        src="Images/bowl2.png" />
-      <p id="can02"
-        style="position:absolute;top: 450px; left:28px; font-family:verdana; font-size:14px;visibility:hidden;">
-        Weight of the container with field soil is (w<sub>2</sub>) = _____g.</p>
-      <p id="v02"
-        style="position:absolute;left: 500px; top:315px;font-family:verdana; font-size:14px;visibility:hidden;">
-
-      </p>
-    </div>
-
-
-    <!--Step9	-->
-    <div class="simsubscreen" id="canvas11" style="visibility: hidden">
-      <strong id="titlestep8" class="incanvas">STEP </strong>
-      <span class="circlebg" id="stepnumber8">&nbsp;10&nbsp;</span>
-      <p id="pumptext8" class="steptext" style="font-family:verdana; font-size:14px;">Place the container with field soil in the oven for 24 hours at 27&deg;C temperature.</p>
-      <img id="ad" style="position: absolute; left: 140px; top: 200px;width:190px;height:170px;visibility: hidden;"
-        title="door" src="Images/sq.png" />
-      <div id="13-12"
-        style="position:absolute; left:116px; top:126px; width:40px; height:17.5px; background-color:#D3D3D3; font-weight:bold; font-size:14px;">
-        &nbsp;25</div>
-      <img id="13-1" style="position:absolute; left:20px; top:100px; width:210px;" src="Images/oven.png">
-
-      <div id="13-13"
-        style="position:absolute; left:168px; top:124px; width:20.25px; height:18.5px; background-color:transparent; font-weight:bold; font-size:14px; cursor:pointer;"
-        title="Increase Temperature"></div>
-      <div id="13-14"
-        style="position:absolute; left:192.5px; top:124px; width:20.25px; height:18.5px; background-color:transparent; font-weight:bold; font-size:14px; cursor:pointer;"
-        title="Decrease Temperature"></div>
-      <img id="acu" style="position: absolute; left: 100px; top: 420px;visibility: hidden; " title="container"
-        src="Images/bowl2.png">
-      <img id="auu" style="position: absolute; left: 100px; top: 180px;visibility: hidden; " title="container"
-        src="Images/bowl3.png">
-
-      <div class="door" id="incDoor13-1" style="visibility:hidden; "></div>
-      <div class="door" id="incDoor13-2" style="visibility:hidden;"></div>
-      <div class="door" id="incDoor13-3" style="visibility:hidden;"></div>
-      <img id="13-11" style="position: absolute; left: 35px; top: 225px; cursor: pointer; visibility: hidden;"
-        src="Images/ovenknob.png">
-      <div id="13-2"
-        style="position:absolute; left:0px; top:0px; width:750px; height:550px; background-color:white; visibility:hidden;">
-      </div>
-      <h1 id="13-3" style="position:absolute;  left:225px; top:225px; color:grey; text-align:center; display:none;">
-        After 24 hours</h1>
-    </div>
-
-    <div class="simsubscreen" id="canvas12" style="visibility: hidden">
-      <strong id="titlestep21" class="incanvas">STEP </strong>
-      <span class="circlebg" id="stepnumber21">&nbsp;11&nbsp;</span>
-      <p id="pumptext21" class="steptext" style="font-family:verdana; font-size:14px;">Weigh the weight of the core
-        cutter by
-        using weighing balance.</p>
-
-      <img id="5-0" style="position: absolute; left: 430px; top: 255px;" title="Weighing scale" src="Images/wm1.png" />
-      <img id="b" style="position: absolute; left: 200px; top: 355px;" title="container with soil" src="Images/bowl3.png" />
-      <p id="can14" style="position:absolute;top: 450px; left:28px; font-family:verdana; font-size:14px;">Weight of the
-        container with the dry soil (w<sub>3</sub>) = _____ g.</p>
-      <p id="v14" style="position:absolute;left: 535px; top:332px;font-family:verdana; font-size:14px;"></p>
-      <p id="p5-1" style="position:absolute; left:540px; top:332px;"></p>
-      <img id="5-4" style="position:absolute; left:593px; top:375px;visibility: hidden;" src="Images/tare.png">
-    </div>
-
-    <div class="simsubscreen" id="canvas13" style="visibility: hidden">
-      <h3 style="position:absolute; left:-45px; top:-10px;">&nbsp;Observations:</h3>
-      <table style="position:absolute; left:-35px; top:40px; border:1px solid black; font-size:14px;  text-align:left;">
-        <tr>
-          <td style="border:1px solid black; padding:10px;">Container number</td>
-          <td id="k1" style="border:1px solid black; padding:5px;"></td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:10px;">Weight of container, w<sub>1</sub></td>
-          <td id="k2" style="border:1px solid black; padding:5px;"></td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:10px;">Weight of container + field soil, w<sub>2</sub></td>
-          <td id="k3" style="border:1px solid black; padding:5px;"></td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:10px;">Weight of container + dry soil, w<sub>3</sub></td>
-          <td id="k4" style="border:1px solid black; padding:5px;"></td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:10px;">Weight of water, w<sub>w</sub>=w<sub>2</sub>-w<sub>3</sub>
-          </td>
-          <td id="k5" style="border:1px solid black; padding:5px;"></td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:10px;">Weight of dry soil, w<sub>s</sub>=w<sub>3</sub>-w<sub>1</sub>
-          </td>
-          <td id="k6" style="border:1px solid black; padding:5px;"></td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:10px;">Weight of field soil, &rho;<sub>f</sub>
-          </td>
-          <td id="k7" style="border:1px solid black; padding:5px;"></td>
-        </tr>
-        <!-- <tr>
-          <td style="border:1px solid black; padding:10px;">Misture content, W = w<sub>w</sub>/w<sub>s</sub></td>
-          <td id="k7" style="border:1px solid black; padding:5px;"></td>
-        </tr> -->
-
-      </table>
-
-
-      <!-- <h3 style="position:absolute; left:-45px; top:300px;">&nbsp;Variables used in calculation:</h3>
-      <table
-        style="position:absolute; left:-35px; top:350px; border:1px solid black; font-size:14px;  text-align:left;">
-        <tr>
-          <td style="border:1px solid black; padding:5px;">Empty weight of mould, W<sub>c</sub></td>
-          <td style="border:1px solid black; padding:10px;">2181 g</td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:5px;">Weight of compacted soil, W<sub>w</sub> (g)</td>
-          <td style="border:1px solid black; padding:10px;">W<sub>1</sub> - W<sub>c</sub></td>
-        </tr>
-        <tr>
-          <td style="border:1px solid black; padding:5px;">Volume of mould, V<sub>c</sub></td>
-          <td style="border:1px solid black; padding:10px;">1021.01 cc</td>
-        </tr>
-      </table> -->
-
-      <h3 style="position:absolute; left:360px; top:-10px;">&nbsp;Calculations:</h3>
-      <table style="position:absolute; left:370px; top:50px;  font-size:14px;  text-align:left;">
-        <!-- <tr>
-    <td style="padding:5px;text-align:right;">Bulk density, <sup>&rho;</sup><sub>b</sub> =</td>
-    <td id="" style="padding:10px; ">
-      <span class="frac"><sup>M</sup><span>&frasl;</span><sub>V</sub></span> = 
-      <input id="wd" type="text" style=" border:none; border-bottom-style:double; width:55px;" required > g/cc 
-      <span id="mark1" style="font-size:22px; visibility:hidden;" ></span>
-    </td>
-    </tr>
-<tr>
-<td style="padding:5px;"></td>
-<td id="" style="padding:15px;">
-	<input id="chk1" class="clsBtn" type="button" name="check" value="Check" /> 
-	<input id="res1" class="clsBtn" type="button" name="Formula" value="Result" disabled />
-</td>
-</tr>  -->
-        <tr>
-          <td style="padding:5px;text-align:right;">Water content, W =</td>
-          <td id="" style="padding:10px;"><span
-              class="frac"><sup>w<sub>2</sub>-w<sub>3</sub></sup><span>&frasl;</span><sub>w<sub>3</sub>-w<sub>1</sub></sub></span>
-            x 100</td>
-        </tr>
-        <tr>
-          <td style="padding:5px; text-align:right;">=</td>
-          <td id="" style="padding:10px;">
-            <input id="wd1" type="text" style=" border:none; border-bottom-style:double; width:55px;" required>&#37;
-            <span id="mak1" style="font-size:22px; visibility:hidden;"></span>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:5px; "></td>
-          <td id="" style="padding:10px;">
-            <input id="ch1" class="clsBtn" type="button" name="check" value="Check" />
-            <input id="re1" class="clsBtn" type="button" name="Formula" value="Result" disabled />
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:5px;text-align:right;">Dry Density, <sup>&rho;</sup><sub>dry</sub> =</td>
-          <td id="" style="padding:10px; ">
-            <span class="frac"><sup><sup>&rho;</sup><sub>f</sub></sup><span>&frasl;</span><sub>1+W</sub></span> =
-            <input id="wc1" type="text" style=" border:none; border-bottom-style:double; width:55px;" required>g/cc
-            <span id="mak2" style="font-size:22px; visibility:hidden;"></span>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding:5px;"></td>
-          <td id="" style="padding:10px;">
-            <input id="ch2" class="clsBtn" type="button" name="check" value="Check" />
-            <input id="re2" class="clsBtn" type="button" name="Formula" value="Result" disabled />
-          </td>
-        </tr>
-      </table>
-      <div id="sheet1"
-        style="position:absolute; left:377px; top:224px; width:350px; height:175px; background-color:#ffffff;visibility: hidden;">
-      </div>
-      <!-- <div id="sheet2" style="position:absolute; left:377px; top:354px; width:350px; height:175px; background-color:#ffffff;"></div> -->
-
-      <!-- <div  id="div0" style="position: relative;top:-220px; ">
-        <p id="can8" style="position:absolute;top: 240px; left:9px; font-family:verdana; font-size:14px;">Bulkdensity of
-          the core cutter &rho;<sub>b</sub>=<span class="frac"><sup>W<sub>w</sub></sup><span>&frasl;</span><sub>V<sub>c</sub></sub></span>=</p>
-        <input id="re1" type="button"
-          style="border-bottom: 1px solid black; position: absolute; left: 340px; top: 300px;visibility:hidden;" disabled
-          value="Result">
-        <input id="ch1" type="button"
-          style="border-bottom: 1px solid black; position: absolute; left: 280px; top: 300px;visibility:hidden; "
-          value="check">
-
-        <div class="input">
-          <input id="tx1" type="text" onfocus="this.value=''"
-          style="border-bottom:1px solid black;position:absolute;left:280px;top:250px;width:90px;" autocomplete="off"
-          required>         
-          <span class="tooltip1" style="position:absolute;left:280px;top:215px;">(100*Y)/(100+W<sub>3</sub>)</span>
-          <label style="position:absolute;left:380px;top:250px;" >g/cc</label>
+  </head>
+  <body style="margin:0; font-family:verdana; font-size:14px;">
+    <!--Simulation Screen start   -->
+    <div id="simscreen">
+      <!--Title of Simulation   -->
+      <div id="title" ><h3>BACKWARD BLADED CENTRIFUGAL FAN</h3></div>
+      <!--SubScreen Home  -->
+      <div class="simsubscreen" id="canvas0">
+        <h4 class="incanvas" style="font-family:verdana; ">Objective</h4>
+        <p class="incanvas" style="font-family:verdana; font-size:15px;">To draw the characteristics curve of backward bladed centrifugal fan.</p></br>
+        <h4 class="incanvas" style="font-family:verdana; ">Apparatus used:</h4>
+        <p class="incanvas" style="font-family:verdana; font-size:14px;">Pitot Tube, Inclined U-Tube Manometer, Flexible Rubber Tubes, Ventilation Duct, Cardboards of different diameters, Centrifugal fan etc.</p>
+        <span class="tooltip" style="border-bottom:1px dotted ; color:red; position:absolute; left:5px;top:140px;"><strong>Description</strong>
+          <span  class="tooltiptext" style="text-align:justify;left:90px;top:6px;"><strong style="color:red;">Backward Curved Fans:</strong> Backward Curved Fans also known as Radial Fans are Centrifugal Fans with Backward Curved Blades. These Centrifugal Fans provide very good cooling at high-pressure conditions. The impellers of these industrial fans are highly resistant to dirt and dust.</span></span>
+          <img id="" style="position: absolute; left: 0px; top: 260px; width:auto;height:250px;" title="" src="Images/human.png"/>
+          <div class="img_wrap">
+            <img id="" style="position: absolute; left: 100px; top: 205px;height: 280px;width:auto; "
+              src="Images/vent duct.svg" />
+            <p class="img_description" style="left:250px;top:320px;">Isometric View of the Ventilation Duct</p>
+          </div>
+        </div>
+        <!--Step1 -->
+        <div class="simsubscreen" id="canvas1" style="visibility:hidden">
+          <strong id="titlestep" class="incanvas">STEP </strong>
+          <span class="circlebg" id="stepnumber">&nbsp;1&nbsp;</span>
+          <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Start the motor to allow the fan to
+            attain the constant 300 rpm.</p>
+          <img id="a1" style="position: absolute; left: -6px; top: 50px;z-index:1001;height:225px;width:auto;"
+            title="Electronic Controller" src="Images/1.0.svg" />
+          <div>
+            <div id="m7"
+              style="position: absolute;width: 123px;height: 1px;left: 97px;top: 120px;z-index: 1005;background-color: black;transform: rotate(-69deg);-ms-transform: rotate(-69deg);-webkit-transform: rotate(-69deg);opacity:0;">
+            </div>
+            <div id="m8"
+              style="position:absolute;width: 80px;height:1px;left: 121px;top: 167px;z-index:1005;background-color: black;transform: rotate(-57deg);-ms-transform: rotate(-57deg);-webkit-transform: rotate(-57deg);opacity:0;">
+            </div>
+            <p id="arrow2" height="10px"
+              style="position:absolute;left:640px;top:247px;font-size:50px;width:20px;transform:rotate(-14deg); visibility:hidden;">
+              &#x21c7;</p>
+            <!-- <img id='m11' src="Images/cfan.svg" title="Centrifugal fan" style="position:absolute;left:600px;top:
+                  10px;width:140px;visibility:hidden;"> -->
+                  <div class="img_wrap">
+                    <img id="m11" style="position: absolute; left: 600px; top: 30px; width:140px;visibility: hidden;"
+                      src="Images/cfan.svg" />
+                    <p class="img_description" style="left:550px;top:20px;">Top View of the Centrifugal fan</p>
+                  </div>
+                  <p id="x" style="position: absolute;left:650px;top:-15px;font-size:18px;visibility: hidden;"><strong>Trial
+                      1</strong></p>
+            <!-- <p id="m" style="position: absolute;left:650px;top:-15px;font-size:18px;visibility: hidden;"><strong>Trial 1</strong></p> -->
+            <p id='wind'
+              style="position:absolute;left:645px;top: 345px;  font-family:verdana; font-size:11px;visibility:hidden;">Wind
+              Direction</p>
+            <!--  <img id="venti_cap" style="position: absolute; left:643px; top: 253px; z-index:1002;width:auto;height:54px;cursor:zoom-in;" src="Images/venti_cap.svg"/> -->
+            <div id='m1' style="width:15px;height:8px;"></div>
+            <div id="m2" style="width:17.5px;height:7px;"></div>
+            <div id="m3" style="width:17.5px;height:8px;"></div>
+            <div id="m4" style="width:17.5px;height:7px;"></div>
+            <div id="m5" style="width:17.5px;height:8px;"></div>
+          </div>
+          <img id="circle"
+            style="position: absolute; left: 12px; top: 61px;transform-origin: 90% 30%;z-index:1002;cursor:pointer;"
+            height="9px" width="auto" src="Images/button1.png" />
+          <img id="click1"
+            style="position: absolute; left: 14px; top: 63px;transform-origin: 90% 30%;z-index:1002;cursor:pointer;visibility:hidden;"
+            height="5px" width="auto" src="Images/button1.png" />
+          <img id="slider1"
+            style="position: absolute; left: 15px; top: 61px;transform-origin: 90% 30%;z-index:1002;cursor:pointer;"
+            height="10px" width="auto" src="Images/slider.svg" />
+          <img id="slider2"
+            style="position: absolute; left:200px; top: 198px;transform-origin: 90% 30%;z-index:1002;cursor:pointer;"
+            height="10px" width="auto" src="Images/slider.svg" />
+    
+          <img id="speed" style="position: absolute; left: 250px; top:60px;width:150px;visibility: hidden;z-index: 1002;"
+            src="Images/speed.png" />
+          <img id="speed1"
+            style="position: absolute; left: 105px; top:169px;height:30px;width:auto;z-index: 1002;cursor:zoom-in;"
+            src="Images/speed1.png" />
+          <img id="speed2"
+            style="position: absolute; left: 185px; top:100px;height:23px;width:auto;z-index: 1002;cursor:zoom-in;"
+            src="Images/speed1.png" />
+          <img id="ndswh"
+            style="position: absolute; left: 320px; top:88px;width:3px;height:40px;transform-origin: 70% 94%;transform:rotate(-70deg);visibility:hidden;z-index:1002;"
+            src="Images/ndswh.png" />
+    
+          <div class="img_wrap">
+            <img id="ventilationduct1"
+              style="position: absolute; left: 60px; top: 250px; z-index:1002;width:auto;height:280px;"
+              src="Images/ventilationduct1.svg" />
+            <img id="cfan1"
+              style="position: absolute; left:490px; top: 245px; z-index:1002;width:auto;height:18px;cursor:zoom-in;"
+              src="Images/cfan1.svg" />
+            <p class="img_description" style="left:250px;top:300px;">Isometric View of the Ventilation Duct</p>
+          </div>
+          <!--  <img id="venti_cap" style="position: absolute; left:643px; top: 253px; z-index:1002;width:auto;height:54px;cursor:zoom-in;" src="Images/venti_cap.svg"/> -->
+          <img id="circle1"
+            style="position: absolute; left: 133px; top:234px;width:13px;height:13px;z-index:1002;cursor:pointer;"
+            src="Images/button.png" />
+          <img id="circle2"
+            style="position: absolute; left: 133px; top:234px;width:13px;height:13px;z-index:1002;cursor:pointer;visibility:hidden;"
+            src="Images/button_1.png" />
+          <img id="circle3"
+            style="position: absolute; left: 117px; top:212px;width:13px;height:13px;z-index:1002;cursor:pointer;"
+            src="Images/circle1.png" />
+          <img id="a01"
+            style="position: absolute; left: 200px; top:127px;transition: all 1s linear;width:20px;visibility: hidden;"
+            src="Images/rr.png" />
+          <img id="switch1"
+            style="position: absolute; left: 185px; top:131px;width:13px;height:13px;z-index:1002;cursor:pointer;"
+            src="Images/switch2.svg" />
+          <img id="switch2"
+            style="position: absolute; left: 185px; top:131px;width:13px;height:13px;z-index:1002;cursor:pointer;visibility: hidden;"
+            src="Images/switch1.svg" />
+    
+          <img id="circle4"
+            style="position: absolute; left: 203px; top:131px;width:12px;height:12px;z-index:1002;cursor:pointer;"
+            src="Images/circle1.png" />
+          <p id="Sample0"
+            style="position:absolute;left:280px;top:200px;font-family:verdana;font-size:14px;padding:5px;background-color:black;color:white;visibility:hidden;border-radius:5px;text-align:justify;">
+            The knob is being rotated</p>
+          <p id="Sample01"
+            style="position:absolute;left:280px;top:180px;font-family:verdana;font-size:14px;padding:5px;visibility:hidden;border-radius:5px;text-align:justify;">
+            The Motor reading = 300 rpm</p>
+    
+        </div>
+        <!-- step2-->
+        <div class="simsubscreen" id="canvas2" style="visibility:hidden">
+          <strong id="titlestep" class="incanvas">STEP </strong>
+          <span class="circlebg" id="stepnumber">&nbsp;2&nbsp;</span>
+          <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Calculating the angle of inclination of inclined U-Tube Manometer.</p>
+          <div class="img_wrap">
+            <img id="mano" style="position: absolute; left: 110px; top: 154px; width:450px;visibility: hidden;"  src="Images/mano.svg"/>
+            <p class="img_description" style="left:200px;top:185px;">Front View of the Inclined U-Tube Manometer</p>
           </div>
 
-     
-        <p id="r2" style="position:absolute; left:435px; top:220px; color:#32CD32; visibility:hidden;  font-size:22px;">
-          ✔</p>
-        <p id="w2"
-          style="position: absolute; left: 435px; top: 220px; color: red; visibility: hidden; font-size: 22px;">✘</p>
-        <p id="can331"
-          style="position:absolute;top: 300px; left:28px; font-family:verdana; font-size:14px;visibility:hidden;color:red;">
-          Bulkdensity of the core cutter &rho;<sub>b</sub> = 1.95 gm/cm<sup>3</sup></p>
+          <img id="scale" style="position: absolute; left:-30px; top: 53px; visibility: hidden; " height="175px" width="auto" title="Scale" src="Images/scale.png"/>
 
-
-        <div id="div1"  style="position: relative;top: -70px;   visibility: hidden;">
-         <div class="input">
-          <input id="tx2" type="text" onfocus="this.value=''"
-          style="border-bottom:1px solid black;position:absolute;left:280px;top:410px;width:90px;" autocomplete="off"
-          required><tr>
-            <td style="padding:10px;">
-          <span class="frac"><sup>W<sub>w</sub></sup><span>&frasl;</span><sub>V<sub>c</sub></sub></span> = 
-          </td>
-            </tr>
-          <span class="tooltip1" style="position:absolute;left:280px;top:375px;">(W<sub>2</sub>-W<sub>1</sub>)/V</span>
-          <label style="position:absolute;left:380px;top:405px;" >g/cc</label>
-        <p id="can81" style="position:absolute;top: 400px; left:9px; font-family:verdana; font-size:14px;">Dry density
-          of the core cutter &rho;<sub>d</sub>=</p>
-        <input id="re2" type="button"
-          style="border-bottom: 1px solid black; position: absolute; left: 340px; top: 450px;visibility:hidden;"disabled
-          value="Result">
-        <input id="ch2" type="button"
-          style="border-bottom: 1px solid black; position: absolute; left: 280px; top: 450px;visibility:hidden; "
-          value="check">
-          <p id="r3" style="position:absolute; left:435px; top:380px; color:#32CD32; visibility:hidden;  font-size:22px;">
-          ✔</p>
-        <p id="w3"
-          style="position: absolute; left: 435px; top: 380px; color: red; visibility: hidden; font-size: 22px;">✘</p>
-        
+          <div class="img_wrap">
+          <img id="ventilationduct2" style="position: absolute; left:-27px; top: 73px;transform: rotate(-20deg);" height="300px" width="auto" src="Images/ventilationduct.svg"/>
+          <p class="img_description" style="left:150px;top:180px;">Isometric View of the Ventilation Duct</p>
         </div>
 
-        <div id="div2"  style="position: relative;top: 90px;visibility: hidden;   ">
-          <div class="input">
-           <input id="tx3" type="text" onfocus="this.value=''"
-           style="border-bottom:1px solid black;position:absolute;left:280px;top:410px;width:90px;" autocomplete="off"
-           required>         
-           <span class="tooltip1" style="position:absolute;left:280px;top:375px;">(W<sub>2</sub>-W<sub>1</sub>)/V</span>
-           <label style="position:absolute;left:380px;top:405px;" >&percnt;</label>
-         <p id="can82" style="position:absolute;top: 400px; left:9px; font-family:verdana; font-size:14px;">Moisture content of the given soil w=</p>
-         <input id="re3" type="button"
-           style="border-bottom: 1px solid black; position: absolute; left: 340px; top: 450px;visibility:hidden;"disabled
-           value="Result">
-         <input id="ch3" type="button"
-           style="border-bottom: 1px solid black; position: absolute; left: 280px; top: 450px;visibility:hidden; "
-           value="check">
-           <p id="r4" style="position:absolute; left:435px; top:380px; color:#32CD32; visibility:hidden;  font-size:22px;">
-           ✔</p>
-         <p id="w4"
-           style="position: absolute; left: 435px; top: 380px; color: red; visibility: hidden; font-size: 22px;">✘</p>
-         </div>
+        <img id="ta" style="position: absolute; left:430px; top: 293px;" height="150px" width="auto" src="Images/ta.jpg"/>
+
+        <div class="img_wr1">
+          <img id="manometer1" style="position: absolute; left:512px; top: 312px;transform:rotate(30deg);" height="55px" width="auto"  src="Images/manometer1.svg"/>
+          <p class="img_description1" style="left:420px;top:340px;">Top View of the Inclined U-Tube Manometer</p>
         </div>
+
+        <img id="12cm" style="position: absolute; left: 140px; top: 233px; visibility:hidden;"  src="Images/12 cm.svg"/>
+        <img id="24cm" style="position: absolute; left: 140px; top: 234px; visibility:hidden;"  src="Images/24 cm.svg"/>
+        <img id="30cm" style="position: absolute; left: 140px; top: 233px; visibility:hidden;"  src="Images/30 cm.svg"/>
+
+        <p id="a13" style="position:absolute;left:190px;top:200px;font-family:verdana;font-size:5px;">&#8593</p>
+
+        <img id="1.7cm" style="position: absolute; left: 252px; top: 202px;height:27px; visibility:hidden;"  src="Images/1.7cm.png"/>
+        <img id="3.2cm" style="position: absolute; left: 365px; top: 191px;height:39px; visibility:hidden;"  src="Images/3.2cm.png"/>
+        <img id="4cm" style="position: absolute; left: 460px; top: 181px;height:47px;visibility:hidden;"  src="Images/4cm.png"/>
+
+        <p id='ca-1'  style="position:absolute;top: 413px;  font-family:verdana; font-size:14px;visibility:hidden;">tan &theta; = h/l</p>
+        <p id='ca-2'  style="position:absolute;top: 433px; font-family:verdana; font-size:14px;visibility:hidden">&theta; = tan<sup>-1</sup>( h/l)</p>
+        <p id='ca-3'  style="position:absolute;top: 460px; font-family:verdana; font-size:14px;visibility:hidden;">&theta; = (&theta;<sub>1</sub>+&theta;<sub>2</sub>+&theta;<sub>3</sub>)/3 = 7.74&#0176;</p>
+
+        <table id="table1" border="1" style="text-align:center;position:absolute; font-size:14px;top:300px; width:700px;visibility: hidden;">
+          <tr>
+            <td style="padding:10px;" >Point No</td>
+            <td style="padding:10px;" >Length(l)(cm)</td>
+            <td style="padding:10px;" >Height(h)(cm)</td>
+            <td style="padding:10px;" >Angle(&theta;&#0176;)</td>
+          </tr>
+        </table>
       </div>
-    </div> -->
 
+      <div class="simsubscreen" id="canvas3" style="visibility:hidden">
+        <strong id="titlestep" class="incanvas">STEP </strong>
+        <span class="circlebg" id="stepnumber">&nbsp;3&nbsp;</span>
+        <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Connect flexible rubber tube of manometer to Pitot Tube fixed at point 1 of ventilation duct.</p>
 
+        <span class="tooltip" style="font-family:verdana; font-size:18px;border-bottom:1px dotted ; color:red; position:absolute;">
+          <span id="10" class="tooltiptext" style="font-family:verdana; text-align:justify; font-size:14px;color:white;width:600px;left:-650px;top:150px;visibility:hidden;">Note:</br></br>1.The Pitot Tube should be fixed at point 1 in the ventilation duct tightly.</br>2.Connect one flexible rubber tube of manometer with Total Head of Pitot Tube to take the reading of static pressure.</br>3.Remove rubber tube from Total Head and connect that with Static Head of Pitot Tube to take the reading of total pressure.</br>4.Now, connect one flexible rubber tube of manometer with Total Head and another with Static Head of Pitot Tube to take the reading of velocity pressure.</br></br>
+            <input id="ok" type="button" name="ok" value="OK" />&nbsp;&nbsp;&nbsp;</span>
+          </span>
 
+          <span  style="font-family:verdana; font-size:18px;border-bottom:1px dotted ; color:red; position:absolute;left:-5%;top:-2%;">
+            <span id="Sample5"  style="font-family:verdana; text-align:justify; font-size:14px;background-color:black;color:white;  border-radius: 6px; padding: 10px 10px 10px 10px;width:180px;position: absolute;left:150%;top:50px;text-align:justify;visibility:hidden;">Now, repeat the same procedure for 8 different cardboards and note down the readings of Static, Total and Velocity Head at point 1.</br></br>
+              <input id="ok1" type="button" name="ok" value="OK" />&nbsp;&nbsp;&nbsp;</span>
+            </span>
+
+            <img id="pipe1" style="position: absolute; left: 170px; top: 40px; width:140px;visibility:hidden;" title="Isometric View of the Ventilation Duct" src="Images/pipe1.svg"/>
+            
+            <img id="aa1" style="position: absolute; left: 31px; top: 200px; width:auto;height:27px;visibility: hidden;"  src="Images/hand12.svg"/>
+            <img id="aa2" style="position: absolute; left:129px; top: 200px; width:auto;height:27px;visibility: hidden;"  src="Images/hand11.svg"/>
+
+            <img id="aa" style="position: absolute; left: 45px; top: 180px; width:87px;height:auto;visibility: hidden;" title="Cardboard" src="Images/"/>
+            
+            <img id="ax1" style="position: absolute; left: 355.5px; top: 68px; width:120px;visibility:hidden;cursor:zoom-in;" title="Top View of the Inclined U-tube Manometer" src="Images/ta1.svg"/>
+            <img id="ax2" style="position: absolute; left: 391px; top: 100px; width:50px;visibility:hidden;cursor:zoom-in;" title="Top View of the Inclined U-tube Manometer" src="Images/manom.svg"/>
+
+            <img id="samp1" style="position: absolute; left: 169px; top: 328px; width:300px;height:7px;visibility:hidden;"  src="Images/samp.png"/>
+            <img id="samp2" style="position: absolute; left: 170px; top: 367px; width:300px;height:7px;visibility:hidden;"  src="Images/samp.png"/>
+
+            <img id="white1" style="position: absolute; left: 375px; top: 328px; width:220px;height:7px;transition-duration: 5s;"  src="Images/white.png"/>
+            <img id="white2" style="position: absolute; left: 375px; top: 367px; width:220px;height:7px;transition-duration: 5s;"  src="Images/white.png"/>
+            <img id="white3" style="position: absolute; left: 375px; top: 328px; width:220px;height:7px;visibility:hidden;transition-duration: 5s;"  src="Images/white.png"/>
+            <img id="white4" style="position: absolute; left: 375px; top: 367px; width:220px;height:7px;visibility:hidden;transition-duration: 5s;"  src="Images/white.png"/>
+            <img id="white5" style="position: absolute; left: 375px; top: 328px; width:220px;height:7px;visibility:hidden;transition-duration: 5s;"  src="Images/white.png"/>
+            <img id="white6" style="position: absolute; left: 375px; top: 367px; width:220px;height:7px;visibility:hidden;transition-duration: 5s;"  src="Images/white.png"/>
+
+            <img id="hand1" style="position: absolute; left: 130px; top: 150px;height:30px;width:23px; visibility:hidden;" title="Hand" src="Images/h1.svg"/>
+            <img id="p1" style="position: absolute; left: 240px; top: 5px;width:183px; transform-origin:bottom right;transform:rotate(-26deg);visibility:hidden;" title="flexible rubber tube" src="Images/p1.svg"/>
+            <img id="p2" style="position: absolute; left: 235px; top: -27.5px; width:195px;transform-origin:bottom right;transform:rotate(-26deg);visibility:hidden;" title="flexible rubber tube" src="Images/p2.svg"/>
+            <img id="hand2" style="position: absolute; left: 280px; top: 150px;height:20px;width:auto;visibility:hidden;"  src="Images/hand2.png"/>
+
+            <div class="img_wrap">
+              <img id="manotop" style="position: absolute; left: 50px; top: 260px; visibility:hidden;" src="Images/ms.png"/>
+              <p id="img" style="position: absolute; left:220px;top:400px; font-color: black;padding: 5px 5px 5px 5px;
+              border: 1px solid black; opacity: 2;font-size: 80%;visibility: hidden;">Top View of the inclined U-Tube Manometer
+              </p>
+            </div>
+
+            <p id='c1'  style="position:absolute;top: 105px;left:95px; font-family:verdana; font-size:13px;visibility:hidden;">Point 1</p>
+
+            <img id="a12" style="position: absolute; left: 170px; top: 40px; width:140px;visibility:hidden;"  src="Images/pipee.png"/>
+            <p id='can1'  style="position:absolute;top: 127px; left:70px; font-family:verdana; font-size:13px;visibility:hidden;">Total Head</p>
+            <p id='can2'  style="position:absolute;top: 165px;left:85px; font-family:verdana; font-size:13px;visibility:hidden;">Pitot Tube</p>
+            <p id='can3'  style="position:absolute;top: 85px;left:75px; font-family:verdana; font-size:13px;visibility:hidden;">
+            Static Head</p>
+            <div id="m-1" style="position: absolute;width: 70px;height: 1px;left: 148px;top: 175px;z-index: 1005;background-color: black;transform: rotate(-20deg);-ms-transform: rotate(-20deg);-webkit-transform: rotate(-20deg);visibility:hidden;"></div>
+            <div id="m-2" style="position: absolute;width: 70px;height: 1.5px;left: 144px;top: 148px;z-index: 1005;background-color: black;visibility:hidden;"></div>
+            <div id="m-5" style="position: absolute;width: 80px;height: 1px;left: 150px;top: 127px;z-index: 1005;background-color: black;transform: rotate(30deg);-ms-transform: rotate(30deg);-webkit-transform: rotate(30deg);visibility:hidden;"></div>
+            <div id="m-6" style="position: absolute;width: 80px;height: 1px;left: 138.5px;top: 145px;z-index: 1005;background-color: black;transform: rotate(25deg);-ms-transform: rotate(25deg);-webkit-transform: rotate(25deg);visibility:hidden;"></div>
+
+            <img id="mover1" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;visibility:hidden;transition-duration: 1s;"  src="Images/box1.png"/>
+            <img id="mover2" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;visibility:hidden;transition-duration: 1s;"   src="Images/box1.png"/>
+            <img id="mover3" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;visibility:hidden;transition-duration: 1s;"   src="Images/box1.png"/>
+            
+            <img id="mover4" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;visibility:hidden;transition-duration: 1s;"   src="Images/box1.png"/>
+            <img id="mover5" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;visibility:hidden;transition-duration: 1s;"   src="Images/box1.png"/>
+            <img id="mover6" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;visibility:hidden;transition-duration: 1s;"   src="Images/box1.png"/>
+            
+            <p id="Sample1" style="position:absolute;left:500px;top:100px;font-family:verdana;font-size:14px;padding:5px;background-color:black;color:white;visibility:hidden;border-radius:5px;text-align:justify;width:220px;">First flexible rubber tube is connected to the Static Head</p>
+            <p id="Sample2" style="position:absolute;left:500px;top:100px;font-family:verdana;font-size:14px;padding:5px;background-color:black;color:white;visibility:hidden;border-radius:5px;text-align:justify;width:220px;">Second flexible rubber tube is connected to the Total Head</p>
+            <p id="Sample3" style="position:absolute;left:500px;top:100px;font-family:verdana;font-size:14px;padding:5px;background-color:black;color:white;visibility:hidden;border-radius:5px;text-align:justify;width:220px;">Both flexible rubber tubes are connected to the Static Head and Total Head</p>
+            <p id="Sample4" style="position:absolute;left:-20px;top:185px;font-family:verdana;font-size:14px;padding:5px;background-color:black;color:white;visibility:hidden;border-radius:5px;text-align:justify;width:170px;">Place the cardboard in front of the ventilation duct</p>
+            <p id='para'  style="position:absolute;top: 430px;left:45px; font-family:verdana; font-size:14px;"></p>
+            <p id="para1" style="position:absolute;top: 430px; left:135px;font-family:verdana; font-size:14px;"></p>
+            <p id="para2" style="position:absolute;top:460px;left:135px;font-family:verdana; font-size:14px;"></p>
+            <p id="para3" style="position:absolute;top:490px;left:135px;font-family:verdana; font-size:14px;"></p>
+            <p id='paraa'  style="position:absolute;top: 430px;left:45px; font-family:verdana; font-size:14px;"></p>
+            <p id="para11" style="position:absolute;top: 430px; left:130px;font-family:verdana; font-size:14px;"></p>
+            <p id="para22" style="position:absolute;top:460px;left:130px;font-family:verdana; font-size:14px;"></p>
+            <p id="para33" style="position:absolute;top:490px;left:130px;font-family:verdana; font-size:14px;"></p>
+            <p id='para0'  style="position:absolute;top: 430px; left:45px;font-family:verdana; font-size:14px;"></p>
+            <p id="para11-1" style="position:absolute;top: 430px; left:150px;font-family:verdana; font-size:14px;"></p>
+            <p id="para22-1" style="position:absolute;top:460px;left:150px;font-family:verdana; font-size:14px;"></p>
+            <p id="para33-1" style="position:absolute;top:490px;left:150px;font-family:verdana; font-size:14px;"></p>
+            
+            <div class="img_wrap">
+              <img id="ab1" style="position: absolute; left: 490px; top: 190px;transform:rotate(-2deg);visibility:hidden;cursor:zoom-in; " height="55px";width="auto"; src="Images/mano.svg"/>
+              <p class="img_description" style="left:470px;top:225px;">Front View of the inclined U-tube Manometer</p>
+            </div>
+
+            <img id="a23" style="position: absolute; left:-30px; top: 113px;visibility: hidden;" height="300px" width="auto"
+            src="Images/ventilation.svg" />
+          <p class="img_description" style="left:200px;top:200px;">Isometric View of the Ventilation Duct</p>
+          <img id="a22" style="position: absolute; left:370px; top: 193px;visibility: hidden;cursor:zoom-in;" height="120px"
+            width="auto" title="Isometric View of the Ventilation Duct" src="Images/ventiside.svg" />
+          <img id="a24"
+            style="position: absolute; left: 410px; top: 280px; width:140px;transform:rotate(36deg);visibility:hidden;"
+            title="Isometric View of the Ventilation Duct" src="Images/pipe.svg" />
+          </div>
+
+          <div class="simsubscreenn" id="canvas4"  style="visibility:hidden;">
+          <strong ><h3>Observations: </h3></strong>
+          <span class="tooltip" style="border-bottom:1px dotted ; color:red;"> Variables in calculation
+            <span  class="tooltiptext" style="text-align:justify;left:160px;top:55px;width:400px;">
+            &theta; :Angle of inclination of the manometer tube = 7.74&#0176;<br><br>
+            &#961; :Specific gravity of the manometer liquid = 0.789<br><br>
+            g :Acceleration due to gravity = 9.8 ms<sup>-2</sup><br><br>
+            L<sub>s1</sub> :Length of static head at point 1<br><br>
+            L<sub>t1</sub> :Length of total head at point 1<br><br>
+            L<sub>v1</sub> :Length of velocity head at point 1
+          </span></span>
+        </br>
+        <p>Static, Total, Velocity Head pressure is calculated for cardboard of diameter<u> <span id='s1'></span></u> cm </p>
+        <table id="table2" border=1 style="text-align:center; font-size:14px; width:700px;">
+          <tr>
+            <td colspan="1" style="padding:10px;" ></td>
+            <td colspan="3" style="padding:10px;" >Static Head(cm)</td>
+            <td colspan="3" style="padding:10px;" >Total Head(cm)</td>
+            <td colspan="3" style="padding:10px;" >Velocity Head(cm)</td>
+          </tr>
+          
+          <tr>
+            <td>Dia(m)</td>
+            <td id="" >Left</br>Limb</br>Reading</td>
+            <td id="" >Right</br>Limb</br>Reading</td>
+            <td id="" style="padding:-10px;">Diffe</br>rence</br>(L<sub>s1</sub>)</td>
+            <td id="" style="padding:-10px;">Left</br>Limb</br>Reading</td>
+            <td id="" style="padding:-10px;">Right</br>Limb</br>Reading</td>
+            <td id="" style="padding:-10px;">Diffe</br>rence</br>(L<sub>t1</sub>)</td>
+            <td id="" style="padding:-10px;">Left</br>Limb</br>Reading</td>
+            <td id="" style="padding:-10px;">Right</br>Limb</br>Reading</td>
+            <td id="" style="padding:-10px;">Diffe</br>rence</br>(L<sub>v1</sub>)</td>
+          </tr>
+        </table>
+      </br>
+
+      <div class="input" >
+        <label>Static Head pressure at point 1 (P<sub>s1</sub>)=</label>
+        <input id="output" type="number" autocomplete="off" style="position:absolute;left:100%;top:1px;border:none; border-bottom: 1px solid; width:55px;" required >
+        <span class="tooltip1" style="position:absolute;left:100%;top:-150%;">P<sub>s1</sub>=&#961;gL<sub>s1</sub>sin&theta;</span>
+        <label  style="position:absolute;left:122%;top:4px;">Pa</label>
+        <button id="button" style="position:absolute;left:135%;top:1%;">Check</button>
+        <p id="right" style="position:absolute; left:128%; top:-143%; color:#32CD32;  visibility:hidden; font-size:22px;" >&#10004;</p>
+        <p id="wrong" style="position:absolute; left:128%; top:-143%; color:red;  visibility:hidden; font-size:22px;">&#10008;</p>
+        <p id='h1'  style="position:absolute;left:138%;top:-60%; color:red; font-family:verdana; font-size:13px;visibility:hidden;"></p>
+      </div>
+    </br></br>
+
+    <div class="input" >
+      <label>Total Head pressure at point 1 (P<sub>t1</sub>)=</label>
+      <input id="output1" type="number" autocomplete="off" style="position:absolute;left:100%;top:1px;border:none; border-bottom: 1px solid; width:55px;" required >
+      <span class="tooltip1" style="position:absolute;left:100%;top:-150%;">P<sub>t1</sub>=&#961;gL<sub>t1</sub>sin&theta;</span>
+      <label  style="position:absolute;left:122%;top:4px;">Pa</label>
+      <button id="button1" style="position:absolute;left:136%;top:1%;visibility:hidden;" >Check</button>
+      <p id="right1" style="position:absolute; left:129%; top:-143%; color:#32CD32;  visibility:hidden; font-size:22px;" >&#10004;</p>
+      <p id="wrong1" style="position:absolute; left:129%; top:-143%; color:red;  visibility:hidden; font-size:22px;" >&#10008;</p>
+      <p id='h2'  style="position:absolute;left:139%;top:-45%; color:red; font-family:verdana; font-size:13px;visibility:hidden;"></p>
     </div>
+  </br></br>
 
-    <div class="simsubscreen" id="canvas14" style="visibility:hidden;">
-     
-      <h3 style="position:absolute; left:-50px; top:10px;">&nbsp;Result:</h3>
-      <table id="dataTable" border size=1 style="position:absolute; left:-40px; top:70px; font-size:12px; text-align:center;">
+  <div class="input" >
+    <label>Velocity Head pressure at point 1 (P<sub>v1</sub>)=</label>
+    <input id="output2" type="number" autocomplete="off" style="position:absolute;left:100%;top:1px;border:none; border-bottom: 1px solid; width:55px;" required >
+    <span class="tooltip1" style="position:absolute;left:100%;top:-150%;">P<sub>v1</sub>=&#961;gL<sub>v1</sub>sin&theta;</span>
+    <label  style="position:absolute;left:120%;top:4px;">Pa</label>
+    <button id="button2" style="position:absolute;left:133%;top:1%;visibility:hidden;" >Check</button>
+    <p id="right2" style="position:absolute; left:126%; top:-143%; color:#32CD32;  visibility:hidden; font-size:22px;" >&#10004;</p>
+    <p id="wrong2" style="position:absolute; left:126%; top:-143%; color:red;  visibility:hidden; font-size:22px;" >&#10008;</p>
+    <p id='h3'  style="position:absolute;left:136%;top:-40%; color:red; font-family:verdana; font-size:13px;visibility:hidden;"></p>
+  </div>
+  </br></br>
+  </div>
+  <div class="simsubscreen" id="canvas5"  style="visibility:hidden;">
+  <strong class="incanvas" id="ob"><h3>Observations: </h3></strong>
+  <table id="table3" border=1 style="text-align:center; font-size:14px; width:700px;">
+    <tr>
+      <td>Dia(m)</td>
+      <td id="" >Area (m<sup>2</sup>)</td>
+      <td id="" >Static<br> Head<br> Pressure(P<sub>s1</sub>)</td>
+      <td id="" >Total<br> Head<br> Pressure(P<sub>t1</sub>)</td>
+      <td id="" >Velocity<br>Head<br>Pressure(P<sub>v1</sub>)</td>
+    </tr>
+  </table>
+  </br>
+
+  Density of air (q) = 1.2 kg/m<sup>3</sup> <br><br>
+  <div class="input" >
+    <label>Velocity of air at point 1 (V)=</label>
+    <input id="output2-1" type="number" autocomplete="off" style="position:absolute;left:100%;top:1px;border:none; border-bottom: 1px solid; width:55px;" required >
+    <span class="tooltip1" style="position:absolute;left:100%;top:-170%;"><span style="white-space: nowrap; font-size:larger">
+      V<sub>1</sub>= &radic;<span style="border-top:1px solid;">&nbsp;2p<sub>v1</sub>/q&nbsp;</span>
+    </span></span>
+    <label  style="position:absolute;left:128%;top:4px;">m/s</label>
+    <button id="button2-1" style="position:absolute;left:157%;top:1%;">Check</button>
+    <p id="right2-1" style="position:absolute; left:145%; top:-168%; color:#32CD32;  visibility:hidden; font-size:22px;" >&#10004;</p>
+    <p id="wrong2-1" style="position:absolute; left:145%; top:-168%; color:red;  visibility:hidden; font-size:22px;" >&#10008;</p>
+    <p id='h2-1'  style="position:absolute;left:158%;top:-60%; color:red; font-family:verdana; font-size:13px;visibility:hidden;"></p>
+  </div>
+  </br></br>
+
+  <div class="input" >
+    <label>Volume of air flow at point 1 (Q)=</label>
+    <input id="output2-2" type="number" autocomplete="off" style="position:absolute;left:100%;top:1px;border:none; border-bottom: 1px solid; width:55px;" required >
+    <span class="tooltip1" style="position:absolute;left:100%;top:-170%;">Q=A*V</span>
+    <label  style="position:absolute;left:127%;top:1px;">m<sup>3</sup>/s</label>
+    <button id="button2-2" style="position:absolute;left:150%;top:1%;visibility:hidden;">Check</button>
+    <p id="right2-2" style="position:absolute; left:142%; top:-148%; color:#32CD32;  visibility:hidden; font-size:22px;" >&#10004;</p>
+    <p id="wrong2-2" style="position:absolute; left:142%; top:-148%; color:red;  visibility:hidden; font-size:22px;" >&#10008;</p>
+    <p id='h2-2'  style="position:absolute;left:155%;top:-45%; color:red; font-family:verdana; font-size:13px;visibility:hidden;"></p>
+  </div>
+  </br></br>
+  </div>
+
+  <div id="canvas6" class="simsubscreen" style="visibility:hidden;">
+    <strong class="incanvas">STEP</strong>
+    <span class="circlebg">&nbsp;4&nbsp;</span>
+    <p class="steptext">&nbsp;Plot graph of Axial Load Vs Penetration.</p>
+    <div>
+      <p id="g" style="position:absolute;background-color: #EEEEEE; left:150px; top:25px;cursor:pointer;border: 2px solid;padding: 5px;border-radius: 5px" onclick = "graph();">Total Pressure v/s Volume Flow graph for 300 rpm</p>
+      <div id="chartContainer" style="position:absolute;height: 440px; width: 600px; top:50px;margin-left:50px; margin-right:100px; margin-top:30px;border:2px solid;visibility:hidden"></div>
+    </div>
+    <a id='download-graph'style='visibility: hidden;'><button style='position: absolute;  left: 540px; top:45px;font-family:verdana; font-size:12px;'>Download Graph</button></a>
+    
+  </div>
+
+  <div class="simsubscreen" id="canvas7" style="visibility:hidden">
+    <strong id="titlestep" class="incanvas">STEP </strong>
+    <span class="circlebg" id="stepnumber">&nbsp;5&nbsp;</span>
+    <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Start the motor to allow the fan to attain the constant 400 rpm.</p>
+
+    <img id="a11" style="position: absolute; left: -6px; top: 50px;z-index:1001;height:225px;width:auto;"
+    title="Electronic Controller" src="Images/1.0.svg" />
+  <div>
+    <div id="m77"
+      style="position: absolute;width: 123px;height: 1px;left: 97px;top: 120px;z-index: 1005;background-color: black;transform: rotate(-69deg);-ms-transform: rotate(-69deg);-webkit-transform: rotate(-69deg);opacity:0;">
+    </div>
+    <div id="m88"
+      style="position:absolute;width: 80px;height:1px;left: 121px;top: 167px;z-index:1005;background-color: black;transform: rotate(-57deg);-ms-transform: rotate(-57deg);-webkit-transform: rotate(-57deg);opacity:0;">
+    </div>
+    <p id="arrow22" height="10px"
+      style="position:absolute;left:640px;top:247px;font-size:50px;width:20px;transform:rotate(-14deg); visibility:hidden;">
+      &#x21c7;</p>
+    <!-- <img id='m11' src="Images/cfan.svg" title="Centrifugal fan" style="position:absolute;left:600px;top:
+          10px;width:140px;visibility:hidden;"> -->
+    <div class="img_wrap">
+      <img id="m12" style="position: absolute; left: 600px; top: 30px; width:140px;visibility: hidden;"
+        src="Images/cfan.svg" />
+      <p class="img_description" style="left:550px;top:20px;">Top View of the Centrifugal fan</p>
+    </div>
+    <!-- <p id="m" style="position: absolute;left:650px;top:-15px;font-size:18px;visibility: hidden;"><strong>Trial 1</strong></p> -->
+    <p id='wind1'
+      style="position:absolute;left:645px;top: 345px;  font-family:verdana; font-size:11px;visibility:hidden;">Wind
+      Direction</p>
+    <!--  <img id="venti_cap" style="position: absolute; left:643px; top: 253px; z-index:1002;width:auto;height:54px;cursor:zoom-in;" src="Images/venti_cap.svg"/> -->
+    <div id='n1' style="width:15px;height:8px;"></div>
+    <div id="n2" style="width:17.5px;height:7px;"></div>
+    <div id="n3" style="width:17.5px;height:8px;"></div>
+    <div id="n4" style="width:17.5px;height:7px;"></div>
+    <div id="n5" style="width:17.5px;height:8px;"></div>
+  </div>
+  <img id="circle11"
+    style="position: absolute; left: 12px; top: 61px;transform-origin: 90% 30%;z-index:1002;cursor:pointer;"
+    height="9px" width="auto" src="Images/button1.png" />
+  <img id="click11"
+    style="position: absolute; left: 14px; top: 63px;transform-origin: 90% 30%;z-index:1002;cursor:pointer;visibility:hidden;"
+    height="5px" width="auto" src="Images/button1.png" />
+  <img id="slider11"
+    style="position: absolute; left: 15px; top: 61px;transform-origin: 90% 30%;z-index:1002;cursor:pointer;"
+    height="10px" width="auto" src="Images/slider.svg" />
+  <img id="slider22"
+    style="position: absolute; left:200px; top: 198px;transform-origin: 90% 30%;z-index:1002;cursor:pointer;"
+    height="10px" width="auto" src="Images/slider.svg" />
+
+  <img id="speed11" style="position: absolute; left: 250px; top:60px;width:150px;visibility: hidden;z-index: 1002;"
+    src="Images/speed.png" />
+  <img id="speed12"
+    style="position: absolute; left: 105px; top:169px;height:30px;width:auto;z-index: 1002;cursor:zoom-in;"
+    src="Images/speed1.png" />
+  <img id="speed22"
+    style="position: absolute; left: 185px; top:100px;height:23px;width:auto;z-index: 1002;cursor:zoom-in;"
+    src="Images/speed1.png" />
+  <img id="ndswh1"
+    style="position: absolute; left: 320px; top:88px;width:3px;height:40px;transform-origin: 70% 94%;transform:rotate(-70deg);visibility:hidden;z-index:1002;"
+    src="Images/ndswh.png" />
+
+  <div class="img_wrap">
+    <img id="ventilationduct11"
+      style="position: absolute; left: 60px; top: 250px; z-index:1002;width:auto;height:280px;"
+      src="Images/ventilationduct1.svg" />
+    <img id="cfan11"
+      style="position: absolute; left:490px; top: 245px; z-index:1002;width:auto;height:18px;cursor:zoom-in;"
+      src="Images/cfan1.svg" />
+    <p class="img_description" style="left:250px;top:300px;">Isometric View of the Ventilation Duct</p>
+  </div>
+  <!--  <img id="venti_cap" style="position: absolute; left:643px; top: 253px; z-index:1002;width:auto;height:54px;cursor:zoom-in;" src="Images/venti_cap.svg"/> -->
+  <img id="circle10"
+    style="position: absolute; left: 133px; top:234px;width:13px;height:13px;z-index:1002;cursor:pointer;"
+    src="Images/button.png" />
+  <img id="circle20"
+    style="position: absolute; left: 133px; top:234px;width:13px;height:13px;z-index:1002;cursor:pointer;visibility:hidden;"
+    src="Images/button_1.png" />
+  <img id="circle30"
+    style="position: absolute; left: 117px; top:212px;width:13px;height:13px;z-index:1002;cursor:pointer;"
+    src="Images/circle1.png" />
+  <img id="a02"
+    style="position: absolute; left: 200px; top:127px;transition: all 1s linear;width:20px;visibility: hidden;"
+    src="Images/rr.png" />
+  <img id="switch11"
+    style="position: absolute; left: 185px; top:131px;width:13px;height:13px;z-index:1002;cursor:pointer;"
+    src="Images/switch2.svg" />
+  <img id="switch22"
+    style="position: absolute; left: 185px; top:131px;width:13px;height:13px;z-index:1002;cursor:pointer;visibility: hidden;"
+    src="Images/switch1.svg" />
+
+  <img id="circle44"
+    style="position: absolute; left: 203px; top:131px;width:12px;height:12px;z-index:1002;cursor:pointer;"
+    src="Images/circle1.png" />
+  <p id="Sample00"
+    style="position:absolute;left:280px;top:200px;font-family:verdana;font-size:14px;padding:5px;background-color:black;color:white;visibility:hidden;border-radius:5px;text-align:justify;">
+    The knob is being rotated</p>
+  <p id="Sample02"
+    style="position:absolute;left:280px;top:180px;font-family:verdana;font-size:14px;padding:5px;visibility:hidden;border-radius:5px;text-align:justify;">
+    The Motor reading = 400 rpm</p>
+        </div>
+
+        <div class="simsubscreen" id="canvas8" style="visibility:hidden">
+          <strong id="titlestep" class="incanvas">STEP </strong>
+          <span class="circlebg" id="stepnumber">&nbsp;6&nbsp;</span>
+          <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Connect flexible rubber tube of manometer to Pitot Tube fixed at point 1 of ventilation duct.</p>
+          <img id="pipe_1" style="position: absolute; left: 170px; top: 40px; width:140px;visibility:hidden;"title="Isometric View of the Ventilation Duct"  src="Images/pipe1.svg"/>
+
+          <img id="bb1" style="position: absolute; left: 31px; top: 200px; width:auto;height:27px;visibility: hidden;"  src="Images/hand12.svg"/>
+          <img id="bb2" style="position: absolute; left:129px; top: 200px; width:auto;height:27px;visibility: hidden;"  src="Images/hand11.svg"/>
+          <img id="bb" style="position: absolute; left: 45px; top: 180px; width:87px;height:auto;visibility: hidden;" title="Cardboard" src="Images/"/>
+          <img id="samp_1" style="position: absolute; left: 169px; top: 328px; width:300px;height:7px;visibility:hidden;"  src="Images/samp.png"/>
+          <img id="samp_2" style="position: absolute; left: 170px; top: 367px; width:300px;height:7px;visibility:hidden;"  src="Images/samp.png"/>
+          <img id="bx1" style="position: absolute; left: 355.5px; top: 68px; width:120px;visibility:hidden;cursor:zoom-in;" title="Top View of the Inclined U-tube Manometer" src="Images/ta1.svg"/>
+          <img id="bx2" style="position: absolute; left: 391px; top: 100px; width:50px;visibility:hidden;cursor:zoom-in;" title="Top View of the Inclined U-tube Manometer" src="Images/manom.svg"/>
+
+          <div class="img_wrap">
+            <img id="ab12" style="position: absolute; left: 490px; top: 190px;transform:rotate(-2deg);visibility:hidden;cursor:zoom-in; " height="55px";width="auto"; src="Images/mano.svg"/>
+            <p class="img_description" style="left:470px;top:225px;">Front View of the inclined U-tube Manometer</p>
+          </div>
+
+          <img id="white_1" style="position: absolute; left: 375px; top: 328px; width:220px;height:7px;transition-duration: 5s;"  src="Images/white.png"/>
+          <img id="white_2" style="position: absolute; left: 375px; top: 367px; width:220px;height:7px;transition-duration: 5s;"  src="Images/white.png"/>
+          <img id="white_3" style="position: absolute; left: 375px; top: 328px; width:220px;height:7px;transition-duration: 5s;visibility:hidden;"  src="Images/white.png"/>
+          <img id="white_4" style="position: absolute; left: 375px; top: 367px; width:220px;height:7px;transition-duration: 5s;visibility:hidden;"  src="Images/white.png"/>
+<!-- 
+          <img id="b33-2" style="position: absolute; left: 375px; top: 328px; width:220px;height:7px;transition-duration: 5s;visibility:hidden;"  src="Images/white.png"/>
+          <img id="b33-22" style="position: absolute; left: 375px; top: 367px; width:220px;height:7px;transition-duration: 5s;visibility:hidden;"  src="Images/white.png"/>
+ -->          
+          <img id="white_5" style="position: absolute; left: 375px; top: 328px; width:220px;height:7px;transition-duration: 5s;visibility:hidden;"  src="Images/white.png"/>
+          <img id="white_6" style="position: absolute; left: 375px; top: 367px; width:220px;height:7px;transition-duration: 5s;visibility:hidden;"  src="Images/white.png"/>
+
+          <img id="hand_1" style="position: absolute; left: 130px; top: 150px;height:30px;width:23px; visibility:hidden;" title="Hand" src="Images/h1.svg"/>
+          <img id="p_1" style="position: absolute; left: 240px; top: 5px;width:183px; transform-origin:bottom right;transform:rotate(-26deg);visibility:hidden;" title="flexible rubber tube" src="Images/p1.svg"/>
+
+          <img id="p_2" style="position: absolute; left: 235px; top: -27.5px; width:195px;transform-origin:bottom right;transform:rotate(-26deg);visibility:hidden;" title="flexible rubber tube" src="Images/p2.svg"/>
+
+          <img id="hand_2" style="position: absolute; left: 280px; top: 150px;height:20px;width:auto;visibility:hidden;" title="Hand" src="Images/hand2.png"/>
+
+          <div class="img_wrap">
+            <img id="manotop1" style="position: absolute; left: 50px; top: 260px; visibility:hidden;" src="Images/ms.png"/>
+            <p id="img1" style="position: absolute; left:220px;top:400px; font-color: black;padding: 5px 5px 5px 5px;
+            border: 1px solid black; opacity: 2;font-size: 80%;visibility: hidden;">Top View of the inclined U-Tube Manometer
+            </p>          
+          </div>
+          
+          <p id="mm" style="position: absolute;left:650px;top:-15px;font-size:18px;visibility: hidden;"><strong>Trial 2</strong></p>
+
+          <p id='can-1'  style="position:absolute;top: 127px; left:70px; font-family:verdana; font-size:13px;visibility:hidden;">Total Head</p>
+          <p id='can-2'  style="position:absolute;top: 165px;left:85px; font-family:verdana; font-size:13px;visibility:hidden;">Pitot Tube</p>
+          <p id='can-3'  style="position:absolute;top: 85px;left:75px; font-family:verdana; font-size:13px;visibility:hidden;">Static Head</p>
+          <p id="Sample41" style="position:absolute;left:-20px;top:185px;font-family:verdana;font-size:14px;padding:5px;background-color:black;color:white;visibility:hidden;border-radius:5px;text-align:justify;width:170px;">Keep the cardboard in front of the ventilation duct</p>
+          <div id="n-1" style="position: absolute;width: 70px;height: 1px;left: 149px;top: 175px;z-index: 1005;background-color: black;transform: rotate(-20deg);-ms-transform: rotate(-20deg);-webkit-transform: rotate(-20deg);visibility:hidden;"></div>
+          <div id="n-2" style="position: absolute;width: 70px;height: 1.7px;left: 144px;top: 148px;z-index: 1005;background-color: black;visibility:hidden;"></div>
+          <div id="n-3" style="position: absolute;width: 145.5px;height: 1px;left: 270px;top: 205.5px;z-index: 1005;background-color: black;transform: rotate(-50deg);-ms-transform: rotate(-50deg);-webkit-transform: rotate(-50deg);visibility:hidden;"></div>
+          <div id="n-4" style="position: absolute;width: 141px;height: 1px;left: 398px;top: 207px;z-index: 1005;background-color: black;transform: rotate(50deg);-ms-transform: rotate(50deg);-webkit-transform: rotate(50deg);visibility:hidden;"></div>
+          <div id="n-5" style="position: absolute;width: 80px;height: 1px;left: 150px;top: 127px;z-index: 1005;background-color: black;transform: rotate(30deg);-ms-transform: rotate(30deg);-webkit-transform: rotate(30deg);visibility:hidden;"></div>
+
+          <img id="mover_1" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;transition-duration: 1s;visibility:hidden;"  src="Images/box1.png"/>
+          <img id="mover_2" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;transition-duration: 1s;visibility:hidden;"  src="Images/box1.png"/>
+          <img id="mover_3" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;transition-duration: 1s;visibility:hidden;"  src="Images/box1.png"/>
+          
+          <img id="mover_4" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;transition-duration: 1s;visibility:hidden;"  src="Images/box1.png"/>
+          <img id="mover_5" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;transition-duration: 1s;visibility:hidden;"  src="Images/box1.png"/>
+          <img id="mover_6" style="position: absolute; left: 195px; top: 317px; width:70px;height:65px;transition-duration: 1s;visibility:hidden;"  src="Images/box1.png"/>
+          
+          
+          <p id='par'  style="position:absolute;top: 430px;left:45px; font-family:verdana; font-size:14px;"></p>
+          <p id="par1" style="position:absolute;top: 430px; left:135px;font-family:verdana; font-size:14px;"></p>
+          <p id="par2" style="position:absolute;top:460px;left:135px;font-family:verdana; font-size:14px;"></p>
+          <p id="par3" style="position:absolute;top:490px;left:135px;font-family:verdana; font-size:14px;"></p>
+
+          <p id='parr'  style="position:absolute;top: 430px;left:45px; font-family:verdana; font-size:14px;"></p>
+          <p id="par11" style="position:absolute;top: 430px; left:130px;font-family:verdana; font-size:14px;"></p>
+          <p id="par22" style="position:absolute;top:460px;left:130px;font-family:verdana; font-size:14px;"></p>
+          <p id="par33" style="position:absolute;top:490px;left:130px;font-family:verdana; font-size:14px;"></p>
+
+          <p id='par0'  style="position:absolute;top: 430px; left:45px;font-family:verdana; font-size:14px;"></p>
+          <p id="par12-2" style="position:absolute;top: 430px; left:150px;font-family:verdana; font-size:14px;"></p>
+          <p id="par22-2" style="position:absolute;top:460px;left:150px;font-family:verdana; font-size:14px;"></p>
+          <p id="par33-2" style="position:absolute;top:490px;left:150px;font-family:verdana; font-size:14px;"></p>
+          <span  style="font-family:verdana; font-size:18px; position:absolute;left:-5%;top:-2%;">
+            <span id="Sample55"  style="font-family:verdana; text-align:justify; font-size:14px;background-color:black;color:white;   border-radius: 6px;padding: 10px 10px 10px 10px;width:180px;position: absolute;left:150%;top:50px;text-align:justify;visibility:hidden;">Now, repeat the same procedure for 8 different cardboards and note down the readings of Static, Total and Velocity Head at point 1.</br></br>
+              <input id="ok2" type="button" name="ok" value="OK" />&nbsp;&nbsp;&nbsp;</span>
+            </span>
+          </div>
+
+          <div class="simsubscreenn" id="canvas9"  style="visibility:hidden;">
+            <strong id="ob"><h3>Observations: </h3></strong>
+            <span class="tooltip" style="border-bottom:1px dotted ; color:red;"> Variables in calculation
+              <span  class="tooltiptext" style="text-align:justify;left:160px;top:55px;width:400px;">
+              &theta; :Angle of inclination of the manometer tube = 7.74&#0176;<br><br>
+              &#961; :Specific gravity of the manometer liquid = 0.789<br><br>
+              g :Acceleration due to gravity = 9.8 ms<sup>-2</sup><br><br>
+              q :Density of air = 1.2 kg/m<sup>3</sup> <br><br>
+              L<sub>s1</sub> :Length of Static Head at point 1<br><br>
+              L<sub>t1</sub> :Length of Total Head at point 1<br><br>
+              L<sub>v1</sub> :Length of Velocity Head at point 1
+            </span></span>
+          </br>
+          <p>Static, Total, Velocity Head pressure is calculated for cardboard of diameter<u> <span id='s2'></span></u> cm </p>
+
+          <table id="table4" border=1 style="text-align:center; font-size:14px; width:700px;">
+            <tr>
+              <td colspan="1" style="padding:10px;" ></td>
+              <td colspan="3" style="padding:10px;" >Static Head(cm)</td>
+              <td colspan="3" style="padding:10px;" >Total Head(cm)</td>
+              <td colspan="3" style="padding:10px;" >Velocity Head(cm)</td>
+            </tr>
+            <tr>
+              <td>Dia(m)</td>
+              <td id="" >Left</br>Limb</br>Reading</td>
+              <td id="" >Right</br>Limb</br>Reading</td>
+              <td id="" style="padding:-10px;">Diffe</br>rence</br>(L<sub>s1</sub>)</td>
+              <td id="" style="padding:-10px;">Left</br>Limb</br>Reading</td>
+              <td id="" style="padding:-10px;">Right</br>Limb</br>Reading</td>
+              <td id="" style="padding:-10px;">Diffe</br>rence</br>(L<sub>t1</sub>)</td>
+              <td id="" style="padding:-10px;">Left</br>Limb</br>Reading</td>
+              <td id="" style="padding:-10px;">Right</br>Limb</br>Reading</td>
+              <td id="" style="padding:-10px;">Diffe</br>rence</br>(L<sub>v1</sub>)</td>
+            </tr>
+          </table>
+          <br>
+
+          <div class="input" >
+            <label>Static Head pressure at point 1 (P<sub>s1</sub>)=</label>
+            <input id="output-11" type="number" autocomplete="off" style="position:absolute;left:100%;top:1px;border:none; border-bottom: 1px solid; width:55px;" required >
+            <span class="tooltip1" style="position:absolute;left:100%;top:-150%;">P<sub>s1</sub>=&#961;gL<sub>s1</sub>sin&theta;</span>
+            <label  style="position:absolute;left:122%;top:4px;">Pa</label>
+            <button id="button-11" style="position:absolute;left:135%;top:1%;" >Check</button>
+            <p id="right-11" style="position:absolute; left:128%; top:-143%; color:#32CD32;  visibility:hidden; font-size:22px;" >&#10004;</p>
+            <p id="wrong-11" style="position:absolute; left:128%; top:-143%; color:red;  visibility:hidden; font-size:22px;" >&#10008;</p>
+            <p id='h1-2'  style="position:absolute;left:138%;top:-60%; color:red; font-family:verdana; font-size:13px;visibility:hidden;"></p>
+          </div>
+        </br></br>
+
+        <div class="input" >
+          <label>Total Head pressure at point 1 (P<sub>t1</sub>)=</label>
+          <input id="output1-11" type="number" autocomplete="off" style="position:absolute;left:100%;top:1px;border:none; border-bottom: 1px solid; width:55px;" required >
+          <span class="tooltip1" style="position:absolute;left:100%;top:-150%;">P<sub>t1</sub>=&#961;gL<sub>t1</sub>sin&theta;</span>
+          <label  style="position:absolute;left:122%;top:4px;">Pa</label>
+          <button id="button1-11" style="position:absolute;left:136%;top:1%;visibility:hidden;">Check</button>
+          <p id="right1-11" style="position:absolute; left:129%; top:-143%; color:#32CD32;  visibility:hidden; font-size:22px;" >&#10004;</p>
+          <p id="wrong1-11" style="position:absolute; left:129%; top:-143%; color:red;  visibility:hidden; font-size:22px;" >&#10008;</p>
+          <p id='h2-21'  style="position:absolute;left:140%;top:-45%; color:red; font-family:verdana; font-size:13px;visibility:hidden;"></p>
+        </div>
+      </br></br>
+
+      <div class="input" >
+        <label>Velocity Head pressure at point 1 (P<sub>v1</sub>)=</label>
+        <input id="output2-11" type="number" autocomplete="off" style="position:absolute;left:100%;top:1px;border:none; border-bottom: 1px solid; width:55px;" required >
+        <span class="tooltip1" style="position:absolute;left:100%;top:-150%;">P<sub>v1</sub>=&#961;gL<sub>v1</sub>sin&theta;</span>
+        <label  style="position:absolute;left:120%;top:4px;">Pa</label>
+        <button id="button2-11" style="position:absolute;left:133%;top:1%;visibility:hidden;">Check</button>
+        <p id="right2-11" style="position:absolute; left:126%; top:-143%; color:#32CD32;  visibility:hidden; font-size:22px;" >&#10004;</p>
+        <p id="wrong2-11" style="position:absolute; left:126%; top:-143%; color:red;  visibility:hidden; font-size:22px;" >&#10008;</p>
+        <p id='h3-2'  style="position:absolute;left:135%;top:-40%; color:red; font-family:verdana; font-size:13px;visibility:hidden;"></p>
+      </div>
+    </br></br>
+  </div>
+
+  <div class="simsubscreen" id="canvas10"  style="visibility:hidden;">
+    <strong class="incanvas" id="ob"><h3>Observations: </h3></strong>
+    <table id="table5" border=1 style="text-align:center; font-size:14px; width:700px;">
       <tr>
-      <td style="text-align:center; font-family:verdana; font-size:12px; padding: 5px;">Trial No.</td>
-      <!-- <td style="text-align:center; font-family:verdana; font-size:12px; padding: 5px;">Water to be added (g)</td> -->
-      <td style="text-align:center; font-family:verdana; font-size:12px; padding: 5px;">Weight of Core cuttter + soil, W<sub>1</sub> (g)</td>
-      <td style="text-align:center; font-family:verdana; font-size:12px; padding: 5px;">Weight of soil, M (g) </td>
-      <td style="text-align:center; font-family:verdana; font-size:12px; padding: 5px;">Volume of soil V (cm<sup>3</sup>)</td>
-
-      <td style="text-align:center; font-family:verdana; font-size:12px; padding: 5px;">
-        <span class="TTText"> Field density, &rho;<sub>f</sub> (g/cc)
-          <span  class="TTFormula" style="font-size:14px;">&rho;<sub>f</sub> = 
-            <span class="frac"><sup>M</sup><span>&frasl;</span><sub>V</sub></span>
-          </span>
-        </span>
-      </td>
-      <td style="text-align:center; font-family:verdana; font-size:12px; padding: 5px;">Weight of empty container, w<sub>1</sub> (g)</td>
-      <td style="text-align:center; font-family:verdana; font-size:12px; padding: 5px;">Weight of empty container + Field soil, w<sub>2</sub> (g)</td>
-      <td style="text-align:center; font-family:verdana; font-size:12px; padding: 5px;">Weight of empty container + dry soil, w<sub>3</sub> (g)</td>
-      <td style="text-align:center; font-family:verdana; font-size:12px; padding: 5px;">
-        <span class="TTText"> Moisture content, 
-          <span  class="TTFormula" style="font-size:12px;">W = 
-            <span class="frac"><sup>w<sub>2</sub>-w<sub>3</sub></sup><span>&frasl;</span><sub>w<sub>3</sub>-w<sub>1</sub></sub></span> &#37;
-          </span>
-        </span>
-      </td>
-      <td style="text-align:center; font-family:verdana; font-size:12px; padding: 5px;">
-        <span class="TTText"> Dry Density, &rho;<sub>dry</sub> (g/cc)
-          <span  class="TTFormula" style="font-size:14px;">&rho;<sub>dry</sub> = 
-            <span class="frac"><sup><sup>&rho;</sup><sub>f</sub></sup><span>&frasl;</span><sub>1+W</sub></span>
-          </span>
-        </span>
-      </td>
+        <td>Dia(m)</td>
+        <td id="" >Area (A) (m<sup>2</sup>)</td>
+        <td id="" >Static<br> Head<br> Pressure(P<sub>s1</sub>)</td>
+        <td id="" >Total<br> Head<br> Pressure(P<sub>t1</sub>)</td>
+        <td id="" >Velocity<br>Head<br>Pressure(P<sub>v1</sub>)</td>
       </tr>
-      </table> 
-      <div style="position:absolute;top:250px;left: -40px;">
-      <strong class="incanvas" >
-        <h3>
-          Inference:
-        </h3>
-      </strong>
-    </div>
-      <p id="l1" style="font-size:14px;position:absolute;top:310px;left:-40px;">By observing the result from the experiment the type of soil is heavy clay soil.</p>
-    </div>
+    </table>
+  </br>
 
-    <div id="questD"
-    style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
-    <p id="qu"></p><select id="answer">
+  Density of air (q) = 1.2 kg/m<sup>3</sup><br><br>
+  <div class="input" >
+    <label>Velocity of air at point 1 (V)=</label>
+    <input id="output3-1" type="number" autocomplete="off" style="position:absolute;left:100%;top:1px;border:none; border-bottom: 1px solid; width:55px;" required >
+    <span class="tooltip1" style="position:absolute;left:100%;top:-170%;"><span style="white-space: nowrap; font-size:larger">
+      V<sub>1</sub>= &radic;<span style="border-top:1px solid;">&nbsp;2p<sub>v1</sub>/q&nbsp;</span>
+    </span></span>
+    <label  style="position:absolute;left:129%;top:4px;">m/s</label>
+    <button id="button3-1" style="position:absolute;left:157%;top:1%;">Check</button>
+    <p id="right3-1" style="position:absolute; left:145%; top:-168%; color:#32CD32;  visibility:hidden; font-size:22px;" >&#10004;</p>
+    <p id="wrong3-1" style="position:absolute; left:145%; top:-168%; color:red;  visibility:hidden; font-size:22px;" >&#10008;</p>
+    <p id='h3-1'  style="position:absolute;left:158%;top:-60%; color:red; font-family:verdana; font-size:13px;visibility:hidden;"></p>
+  </div>
+  </br></br>
+
+  <div class="input" >
+    <label>Volume of air flow at point 1 (Q)=</label>
+    <input id="output3-2" type="number" autocomplete="off" style="position:absolute;left:100%;top:1px;border:none; border-bottom: 1px solid; width:55px;" required >
+    <span class="tooltip1" style="position:absolute;left:100%;top:-170%;">Q=A*V</span>
+    <label  style="position:absolute;left:127%;top:1%;">m<sup>3</sup>/s</label>
+    <button id="button3-2" style="position:absolute;left:150%;top:1%;visibility:hidden;" >Check</button>
+    <p id="right3-2" style="position:absolute; left:142%; top:-148%; color:#32CD32;  visibility:hidden; font-size:22px;" >&#10004;</p>
+    <p id="wrong3-2" style="position:absolute; left:142%; top:-148%; color:red;  visibility:hidden; font-size:22px;" >&#10008;</p>
+    <p id='h3-2'  style="position:absolute;left:155%;top:-45%; color:red; font-family:verdana; font-size:13px;visibility:hidden;"></p>
+  </div>
+  </br></br>
+  </div>
+
+  <div class="simsubscreen" id="canvas11"  style="visibility:hidden;">
+    <strong id="titlestep" class="incanvas">STEP </strong>
+    <span class="circlebg" id="stepnumber">&nbsp;7&nbsp;</span>
+    <p id="pumptext" class="steptext" style="font-family:verdana; font-size:14px;">Draw the graph of Total Pressure Vs Volume Flow.</p>
+    <p id="g1" style="position:absolute;background-color: #EEEEEE; left:150px; top:25px;cursor:pointer;border: 2px solid;padding: 5px;border-radius: 5px" onclick = "graph1();">Total Pressure v/s Volume Flow graph for 400 rpm</p>
+    <div id="chartContainer1" style="position:absolute;height: 440px; width: 600px; top:50px;margin-left:50px; margin-right:100px; margin-top:30px;border:2px solid;visibility:hidden"></div>
+  </div>
+  <a id='download-graph1'style='visibility: hidden;'><button style='position: absolute;  left: 580px; top:97px;font-family:verdana; font-size:12px;'>Download Graph</button></a>
+  </div>
+
+  <div class="simsubscreen" id="canvas12"  style="visibility:hidden;">
+    <strong class="incanvas" id="ob"><h3>
+    Result: </h3></strong>
+    <label id="k1" style="font-size:14px;font-family:verdana;" >The characteristics curve of backward bladed centrifugal fan are drawn at different speeds.</label></br></br>
+    <span class="tableShow" style="position:absolute;top:100px;color:red">Refer Graph
+      <span class="tableShowResult" style="border:2px solid black;">
+        <div id="cbcalculation" style="height: 400px; width: 550px; border:2px solid;"></div>
+      </span>
+    </span>
+  </br>
+  <h3>Conclusion:</h3>
+  <p style="font-family: verdana; text-align: justify;">As seen from the graph drawn at 300 and 400 rpm. By increasing the RPM of the fan, Total pressure in the ventilation duct increases for every quantity of air flow. So, graph shifts upward for higher RPM value.
+  </div>
+
+  <div id="questDiv" style="position:absolute; background-color:grey; color:white; padding:7.5px; border-radius:5px; visibility:hidden; text-align:justify;">
+    <p id="q"></p><select id="answer" >
     </select>
     <p id="a"></p>
   </div>
 
-  <div id="">
-    <p id="trial"
-      style="text-transform: uppercase;visibility :hidden; font-weight: bold;font-family:verdana; font-size:14px;">
-      <strong>Trial = </strong></p>
+  <!--next  Arrow -->
+  <div id="nav">
+    <img id="nextButton" onclick="navNext(); " src="Images/Next.png" />
   </div>
-
-    <!--next  Arrow	-->
-    <div id="nav">
-      <img id="nextButton" onclick="navNext(); " src="Images/Next.png" />
-    </div>
-
-    <!--Blinking Arrow	-->
-    <img class="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png" />
-
-    <div id="copyright"> &copy; 2019-2021 SOLVE - The Virtual Lab @ NITK Surathkal, Water Resources and Ocean Engineering.
-    </div>
+  <!--Blinking Arrow  -->
+  <img class ="" id="arrow1" style="visibility:hidden" src="Images/arrow1.png"/>
+  <div id="copyright"> &copy; 2020 SOLVE - The Virtual Lab @ NITK Surathkal, Department of Water Resources & Ocean Engineering</div>
   </div>
-</body>
-
-</html>
+  </body>
+  </html>
