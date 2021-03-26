@@ -97,11 +97,19 @@ function animateArrowATPosition(left, top, height, degg) {
 	document.getElementById("arrow1").style.transform = "rotate(" + degg + "deg)";
 }
 
+
 //stop blinking arrow
 function myStopFunction() {
 	clearInterval(myInt);
 	document.getElementById('arrow1').style.visibility = "hidden";
 }
+
+$(function()
+{
+	$('input').on('input', function() {
+		this.value = this.value.match(/\d*(\.\d*)?/)[0];
+	});
+});
 
 function generate_table() 
 {
