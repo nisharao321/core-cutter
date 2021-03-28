@@ -42,10 +42,10 @@
 <img src="images/c16.PNG"><br>
 
 13. Click on the oven door to open and click on the container to keep it inside the oven and click on the arrow to change the temperature, and click on the Next button.<br>
-<img src="images/c17.png"><br>
+<img src="images/c17.PNG"><br>
 
 14. Click on the door of the oven to open it and click on the container to keep it outside from the oven, and click on the Next button.<br>
-<img src="images/c18.png"><br>
+<img src="images/c18.PNG"><br>
 
 15. Click on the container with dry soil to keep it over the weighing balance to record its weight, and click on the Next button.<br>
 <img src="images/c19.PNG"><br>
