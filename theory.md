@@ -8,11 +8,11 @@ Field Density,γ (g/cc) = Weight of soil/Volume of soil
 Dry Density, γd (g/cc)   =γ/(1+w)
 
 <center>
-  <img src="images/cutter.PNG" height="250" width="425">
-</center>
+  <img src="images/cutter.png" height="250" width="425">
+<!-- </center>
 <center>Characteristics curve of different fan.</center><br>
 <center>Source: (<a href="https://www.cibsejournal.com/cpd/modules/2011-12/">https://www.cibsejournal.com/cpd/modules/2011-12/
-</a>)
+</a>) -->
 </center><br>
 
 <p style="text-indent:50px;text-align:justify;"> Core cutter is suitable for soft to medium cohesive soils, in which the cutter can be driven. It is not possible to drive the cutter into hard, boulder or murrum soils. In such a case, other methods are adopted.
