@@ -8,7 +8,7 @@ Field Density,γ (g/cc) = Weight of soil/Volume of soil
 Dry Density, γd (g/cc)   =γ/(1+w)
 
 <center>
-  <img src="images/cutter.png" height="250" width="425">
+  <img src="images/cutter.png" height="450" width="225">
 <!-- </center>
 <center>Characteristics curve of different fan.</center><br>
 <center>Source: (<a href="https://www.cibsejournal.com/cpd/modules/2011-12/">https://www.cibsejournal.com/cpd/modules/2011-12/
